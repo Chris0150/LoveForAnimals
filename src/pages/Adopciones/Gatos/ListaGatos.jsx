@@ -31,7 +31,7 @@ class ListaGatos extends React.Component {
       <div>
         <NavBar handleNavBack={this.handleNavBack} title="Gatos en Adopción"/>
         <Filterbar filters={aFilters} />
-        <GridList type="Gatos"/>
+        <GridList type="Gatos" showFooter={true}/>
       </div>
     );
   }

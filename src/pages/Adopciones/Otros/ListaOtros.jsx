@@ -31,7 +31,7 @@ class ListaOtros extends React.Component {
       <div>
         <NavBar handleNavBack={this.handleNavBack} title="Otros en Adopción"/>
         <Filterbar filters={aFilters} />
-        <GridList type="Otros"/>
+        <GridList type="Otros"  showFooter={true}/>
       </div>
     );
   }

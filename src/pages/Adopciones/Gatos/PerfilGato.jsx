@@ -87,7 +87,7 @@ class AdopcionGatos extends React.Component {
           }}
             component={Link} to={"/FormularioAdopción"}>
             <img src={adoptdog} alt="" width="30px" />
-            Cuestionario de Adopción
+            Formulario de Adopción
          </Button>
         </div>
       </div>

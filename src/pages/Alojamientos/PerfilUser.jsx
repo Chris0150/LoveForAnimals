@@ -64,7 +64,7 @@ class PerfilUser extends React.Component {
     // Imagenes
     tabs.push(
       <div>
-        <GridList type="Perros" />
+        <GridList type="User" showFooter={false}/>
       </div>
     );
 

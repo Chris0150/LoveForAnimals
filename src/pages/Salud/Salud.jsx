@@ -40,12 +40,12 @@ class Salud extends React.Component {
     super(props);
 
     this.state = {
-      firststep : firststep_dog,
-      young : young_dog,
-      training : training_dog,
-      friends : friends_dog,
-      bath : bath_dog,
-      food : food_dog
+      firststep: firststep_dog,
+      young: young_dog,
+      training: training_dog,
+      friends: friends_dog,
+      bath: bath_dog,
+      food: food_dog
     }
 
     this.handleNavBack = this.handleNavBack.bind(this);
@@ -56,58 +56,58 @@ class Salud extends React.Component {
   }
 
   onClick = (event) => {
-      var typeSrc = event.target.src;
-      if(!typeSrc) return;
+    var typeSrc = event.target.src;
+    if (!typeSrc) return;
 
-      if(typeSrc.indexOf("dog") > -1){
-        this.setState({firststep : firststep_dog});
-        this.setState({young : young_dog});
-        this.setState({training : training_dog});
-        this.setState({friends : friends_dog});
-        this.setState({bath : bath_dog});
-        this.setState({food : food_dog});
-        
-      }
-      else if(typeSrc.indexOf("cat") > -1){
-        this.setState({firststep : firststep_cat});
-        this.setState({young : young_cat});
-        this.setState({training : training_cat});
-        this.setState({friends : friends_cat});
-        this.setState({bath : bath_cat});
-        this.setState({food : food_cat});
-      }
+    if (typeSrc.indexOf("dog") > -1) {
+      this.setState({ firststep: firststep_dog });
+      this.setState({ young: young_dog });
+      this.setState({ training: training_dog });
+      this.setState({ friends: friends_dog });
+      this.setState({ bath: bath_dog });
+      this.setState({ food: food_dog });
 
-      else if(typeSrc.indexOf("bunny") > -1){
-        this.setState({firststep : firststep_bunny});
-        this.setState({young : young_bunny});
-        this.setState({training : training_bunny});
-        this.setState({friends : friends_bunny});
-        this.setState({bath : bath_bunny});
-        this.setState({food : food_bunny});
-      }
+    }
+    else if (typeSrc.indexOf("cat") > -1) {
+      this.setState({ firststep: firststep_cat });
+      this.setState({ young: young_cat });
+      this.setState({ training: training_cat });
+      this.setState({ friends: friends_cat });
+      this.setState({ bath: bath_cat });
+      this.setState({ food: food_cat });
+    }
+
+    else if (typeSrc.indexOf("bunny") > -1) {
+      this.setState({ firststep: firststep_bunny });
+      this.setState({ young: young_bunny });
+      this.setState({ training: training_bunny });
+      this.setState({ friends: friends_bunny });
+      this.setState({ bath: bath_bunny });
+      this.setState({ food: food_bunny });
+    }
   }
 
   render() {
 
     // Top grid
     let aCategories = [];
-    aCategories.push({ icon: dog});
-    aCategories.push({ icon: cat});
-    aCategories.push({ icon: rabbit});
-    aCategories.push({ icon: turtle});
-    aCategories.push({ icon: fish});
+    aCategories.push({ icon: dog });
+    aCategories.push({ icon: cat });
+    aCategories.push({ icon: rabbit });
+    aCategories.push({ icon: turtle });
+    aCategories.push({ icon: fish });
 
     return (
       <div>
         <NavBar handleNavBack={this.handleNavBack} title="Salud y Consejos" />
         <Grid onClick={this.onClick} items={aCategories} />
-        <div style={{maxHeight: "75vh", overflow: "auto"}}>
-        <Card title="Introducción" subtitle="Primeros pasos" image={this.state.firststep} height={150} icon={adoptdog} />
-        <Card title="Jóvenes" subtitle="Desarrollo y aprendizaje" image={this.state.young} height={150} icon={adoptdog}/>
-        <Card title="Enseñanza" subtitle="Buenas prácticas y métodos recomendados" image={this.state.training} height={150} icon={adoptdog}/>
-        <Card title="Salud y Cuidados" subtitle="Higiene y bienestar" image={this.state.bath} height={150} icon={adoptdog}/>
-        <Card title="Dieta y Nutrición" subtitle="Requerimientos y necesidades" image={this.state.food} height={150} icon={adoptdog}/>
-        <Card title="Convivencia" subtitle="Espacios en común y coexistencia" image={this.state.friends} height={150} icon={adoptdog}/>
+        <div style={{ maxHeight: "75vh", overflow: "auto" }}>
+          <Card title="Introducción" subtitle="Primeros pasos" image={this.state.firststep} height={150} icon={adoptdog} />
+          <Card title="Jóvenes" subtitle="Desarrollo y aprendizaje" image={this.state.young} height={150} icon={adoptdog} />
+          <Card title="Enseñanza" subtitle="Buenas prácticas y métodos recomendados" image={this.state.training} height={150} icon={adoptdog} />
+          <Card title="Salud y Cuidados" subtitle="Higiene y bienestar" image={this.state.bath} height={150} icon={adoptdog} />
+          <Card title="Dieta y Nutrición" subtitle="Requerimientos y necesidades" image={this.state.food} height={150} icon={adoptdog} />
+          <Card title="Convivencia" subtitle="Espacios en común y coexistencia" image={this.state.friends} height={150} icon={adoptdog} />
         </div>
       </div>
     );

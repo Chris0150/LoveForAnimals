@@ -44,7 +44,7 @@ export default function FolderList(props) {
         <div>
 
             <Typography className={classes.title} variant="h6" display="block" gutterBottom>
-                Formulario de Apadrinamiento
+                Contacto
                         </Typography>
 {/* 
           

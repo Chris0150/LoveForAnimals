@@ -7,6 +7,7 @@ import IconButton from '@material-ui/core/IconButton';
 import tileDataDogs from '../assets/data/GridListDataDogs';
 import tileDataCats from '../assets/data/GridListDataCats';
 import tileDataOthers from '../assets/data/GridListDataOthers';
+import tileDataUsers from '../assets/data/GridListDataUsers';
 import adoptdog from "../assets/images/icons/adoptdog.png";
 import vet from "../assets/images/icons/vet.png";
 import { Link } from 'react-router-dom'
@@ -45,6 +46,7 @@ export default function ImageGridList(props) {
     if(props.type === "Perros"){ tileData = tileDataDogs; profileType = "/PerfilPerro"}
     else if(props.type === "Gatos"){ tileData = tileDataCats; profileType = "/PerfilGato"}
     else if(props.type === "Otros"){ tileData = tileDataOthers; profileType = "/PerfilOtro"}
+    else if(props.type === "User"){ tileData = tileDataUsers; profileType = "/PerfilUser"}
 
     return (
         <div className={classes.root}>
@@ -53,6 +55,9 @@ export default function ImageGridList(props) {
                 {tileData.map(tile => (
                     <GridListTile component={Link} to={profileType} key={tile.img} cols={tile.cols || 1} className={classes.tile}>
                         <img src={tile.img} alt={tile.title} />
+                       
+                        {/* Rating */}
+                        {props.showFooter === true ?
                         <GridListTileBar
                             title={tile.title}
                             subtitle={<span>{tile.location}</span>}
@@ -64,6 +69,7 @@ export default function ImageGridList(props) {
                                 </IconButton>
                             }
                         />
+                        : null}
                     </GridListTile>
                 ))}
             </GridList>

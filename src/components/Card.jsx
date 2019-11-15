@@ -20,8 +20,10 @@ const useStyles = makeStyles({
     backgroundColor: "#dcdcdc"
   },
   img: {
-    marginLeft: "85%",
-    display: "block", 
+    position: "absolute",
+    top: 10,
+    right: 10,
+    height: 30
   }
 });
 
@@ -39,12 +41,13 @@ export default function ImgMediaCard(props) {
           title=""
         />
         <CardContent>
+          <img src={props.icon} alt="" height="40px" className={classes.img} />
           <Typography gutterBottom variant="h6" component="h2">
           {props.title}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
           {props.subtitle}
-          <img src={props.icon} alt="" height="40px" className={classes.img}></img>
+         
           </Typography>
         </CardContent>
       </CardActionArea>
