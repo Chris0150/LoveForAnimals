@@ -74,7 +74,7 @@ class Perdidos extends React.Component {
           orientation="horizontal"
           items={aMaps}
         />
-        <BottomBar />
+        <BottomBar type="lost"/>
       </div>
     );
   }

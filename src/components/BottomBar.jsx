@@ -8,7 +8,7 @@ import AddIcon from '@material-ui/icons/Add';
 import Typography from '@material-ui/core/Typography';
 import Modal from '@material-ui/core/Modal';
 import redMarker from "../assets/images/icons/redMarker.png";
-import TextField from '@material-ui/core/TextField'; 
+import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 
@@ -89,8 +89,8 @@ export default function FolderList(props) {
   const [state, setState] = React.useState({
     checkedA: true,
     checkedB: true,
-    checkedF: true,
-    checkedG: true,
+    checkedC: false,
+    checkedD: false
   });
 
   const handleChange = name => event => {
@@ -118,75 +118,36 @@ export default function FolderList(props) {
         onClose={handleClose}
       >
         <div style={modalStyle} className={classes.paper}>
-          <Typography gutterBottom variant="h5" display="block">
-            Nueva Entrada
-          </Typography>
-          <TextField
-            id="filled-password-input"
-            label="Nombre"
-            variant="filled"
-            className={classes.textField}
-            margin="normal"
-          />
 
-          <TextField
-            id="filled-password-input"
-            label="Raza"
-            variant="filled"
-            className={classes.textField}
-            margin="normal"
-          />
-
-          <TextField
-            id="filled-password-input"
-            label="Edad"
-            variant="filled"
-            className={classes.textField}
-            margin="normal"
-          />
-
-          <TextField
-            id="filled-password-input"
-            label="Localización"
-            variant="filled"
-            className={classes.textField}
-            margin="normal"
-          />
-
-
-          <TextField
-            id="filled-password-input"
-            label="Visto por última vez"
-            variant="filled"
-            className={classes.textField}
-            margin="normal"
-          />
-
-          <TextField
-            id="filled-password-input"
-            label="Teléfono de Contacto"
-            variant="filled"
-            className={classes.textField}
-            margin="normal"
-          />
-
-          <FormControlLabel
-            control={
-              <Checkbox
-                checked={state.checkedB}
-                onChange={handleChange('checkedB')}
-                value="checkedB"
-                color="primary"
+          {/* Perdidos (Nueva Entrada)*/}
+          {props.type === "lost" ?
+            <div>
+              <Typography gutterBottom variant="h5" display="block">Nueva Entrada</Typography>
+              <TextField label="Nombre" variant="filled" className={classes.textField} margin="normal" />
+              <TextField label="Raza" variant="filled" className={classes.textField} margin="normal" />
+              <TextField label="Edad" variant="filled" className={classes.textField} margin="normal" />
+              <TextField label="Localización" variant="filled" className={classes.textField} margin="normal" />
+              <TextField label="Visto por última vez" variant="filled" className={classes.textField} margin="normal" />
+              <TextField label="Teléfono de Contacto" variant="filled" className={classes.textField} margin="normal" />
+              <FormControlLabel label="Adjuntar Perfil" control={<Checkbox checked={state.checkedB} onChange={handleChange('checkedB')} value="checkedB" color="primary" />}
               />
-            }
-            label="Adjuntar Perfil"
-          />
-
+            </div>
+            // Mensajes (Nuevo Mensaje)
+            :
+            <div>
+              <Typography gutterBottom variant="h5" display="block">Nuevo Mensaje</Typography>
+              <TextField label="Usuario:" variant="filled" className={classes.textField} margin="normal" />
+              <TextField label="Asunto:" variant="filled" className={classes.textField} margin="normal" />
+              <FormControlLabel label="Reserva de Alojamiento" control={<Checkbox checked={state.checkedC} onChange={handleChange('checkedC')} value="checkedC" color="primary" />} />
+              <FormControlLabel label="Petición de paseo" control={<Checkbox checked={state.checkedD} onChange={handleChange('checkedD')} value="checkedD" color="primary" />} />
+              <TextField label="Mensaje: ..." rows={10} multiline variant="filled" className={classes.textField} margin="normal" />
+            </div>
+          }
 
           <Button className={classes.button} onClick={handleClose}>
             <img src={redMarker} alt="" width="20px" />
-            Añadir
-        </Button>
+            {props.type === "lost" ? "Añadir" : "Enviar"}
+          </Button>
         </div>
       </Modal>
 
