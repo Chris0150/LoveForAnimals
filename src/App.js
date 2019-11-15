@@ -18,15 +18,15 @@ import PerfilGato from './pages/Adopciones/Gatos/PerfilGato';
 import ListaOtros from './pages/Adopciones/Otros/ListaOtros';
 import PerfilOtro from './pages/Adopciones/Otros/PerfilOtro';
 import Perfil from './pages/Usuario/Perfil/Perfil';
-import FormVet from './components/Forms/FormularioVeterinario';
 import MiPerro from './pages/Usuario/MisAnimales/MiPerro';
 import MiGato from './pages/Usuario/MisAnimales/MiGato';
 import Notificaciones from './pages/Usuario/Notificaciones/Notificaciones';
 import Mensajes from './pages/Usuario/Mensajes/Mensajes';
 import SobreNosotros from './pages/Usuario/SobreNosotros/SobreNosotros';
-import FormContacto from './components/Forms/FormularioContacto';
-import FormAdopcion from './components/Forms/FormularioAdopcion';
-import FormApadrinar from './components/Forms/FormularioApadrinar';
+import Contacto from './pages/Usuario/Contacto/Contacto';
+import Adopcion from './pages/Adopciones/Adopcion';
+import Apadrinar from './pages/Adopciones/Apadrinar';
+import Veterinario from './pages/Usuario/MisAnimales/MiVeterinario';
 
 class App extends Component {
   // eslint-disable-next-line
@@ -42,12 +42,12 @@ class App extends Component {
             <Switch>
               <Route exact path='/' component={Inicio} />
               <Route path='/SobreNosotros' component={SobreNosotros} />
-              <Route path='/Contacto' component={FormContacto} />
+              <Route path='/Contacto' component={Contacto} />
               <Route path='/ListaPerros' component={ListaPerros} />
               <Route path='/ListaGatos' component={ListaGatos} />
               <Route path='/ListaOtros' component={ListaOtros} />
-              <Route path='/FormularioAdopción' component={FormAdopcion} />
-              <Route path='/FormularioApadrinar' component={FormApadrinar} />
+              <Route path='/FormularioAdopción' component={Adopcion} />
+              <Route path='/FormularioApadrinar' component={Apadrinar} />
               <Route path='/Alojamientos' component={Alojamientos} />
               <Route path='/PerfilUser' component={PerfilUser} />
               <Route path='/Seleccion' component={Seleccion} />
@@ -62,7 +62,7 @@ class App extends Component {
               <Route path='/PerfilGato' component={PerfilGato} />
               <Route path='/PerfilOtro' component={PerfilOtro} />
               <Route path='/Perfil' component={Perfil} />
-              <Route path='/ConsultaVeterinaria' component={FormVet} />
+              <Route path='/ConsultaVeterinaria' component={Veterinario} />
               <Route path='/MiPerro' component={MiPerro} />
               <Route path='/MiGato' component={MiGato} />
             </Switch>

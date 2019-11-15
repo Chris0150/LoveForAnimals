@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from "react-redux";
-import './Contacto.css';
-import NavBar from '../../../components/NavBar';
-import FormContact from '../../../components/Forms/FormularioContacto';
+import './Apadrinar';
+import NavBar from '../../components/NavBar';
+import FormApadrinar from '../../components/Forms/FormularioApadrinar';
 
-class Contacto extends React.Component {
+class Apadrinar extends React.Component {
   constructor(props) {
     super(props);
 
@@ -17,24 +17,24 @@ class Contacto extends React.Component {
   handleNavBack() {
     this.props.history.goBack();
   }
-  
-  
+
   render() {
     return (
       <div>
-        <NavBar handleNavBack={this.handleNavBack} title="Contacto"/>
-        <FormContact />
+        <NavBar handleNavBack={this.handleNavBack} title="Apadrinar" />
+        <FormApadrinar/>
       </div>
     );
   }
 }
 
+
 const mapStateToProps = state => ({
-  
+
 });
 
 const mapDispatchToProps = dispatch => ({
-  
+
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Contacto);
+export default connect(mapStateToProps, mapDispatchToProps)(Apadrinar);

@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from "react-redux";
-import './FormularioVeterinario.css';
+import './MiVeterinario.css';
 import NavBar from '../../../components/NavBar';
-import FormVet from '../../../../components/FormularioVeterinario';
+import FormVet from '../../../components/Forms/FormularioVeterinario';
 
 
-class FormularioVeterinario extends React.Component {
+class MiVeterinario extends React.Component {
   constructor(props) {
     super(props);
 
@@ -37,4 +37,4 @@ const mapDispatchToProps = dispatch => ({
   
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(FormularioVeterinario);
+export default connect(mapStateToProps, mapDispatchToProps)(MiVeterinario);
