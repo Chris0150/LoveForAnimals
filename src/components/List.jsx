@@ -44,6 +44,15 @@ export default function FolderList(props) {
             <ListItemText primary={item.title} secondary={item.subtitle} />
             <ListItemSecondaryAction>
 
+              {/* Phone Number */}
+              {props.showPhone === true ?
+                <ListItemIcon>
+                   <Typography variant="caption" style={{ display: "block", textAlign: "" }} gutterBottom>
+                  {item.phone}
+                  </Typography>
+                </ListItemIcon>
+                : null}
+
             <div className={classes.feedback}>
               {/* Rating */}
               {props.showRating === true ?
@@ -66,8 +75,8 @@ export default function FolderList(props) {
                   </div>
                 </ListItemIcon>
                 : null}
-
               </div>
+
               {/* Lost Marker */}
               {props.showLostMarker === true ?
                 <ListItemIcon>

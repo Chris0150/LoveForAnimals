@@ -3,7 +3,7 @@ import image2 from '../images/users/2.jpg'
 import image3 from '../images/users/3.jpg'
 import image4 from '../images/users/4.jpg'
 import image5 from '../images/users/5.jpg'
-import image6 from '../images/users/6.jpg'
+//import image6 from '../images/users/6.jpg'
 // import image7 from '../images/users/7.jpg'
 // import image8 from '../images/users/8.jpg'
 // import image9 from '../images/users/9.jpg'
@@ -58,12 +58,13 @@ const tileData = [
         title: 'Mico',
         location: 'Barcelona',
         type: "orangeMarker"
-    }, {
-        img: image6,
-        title: 'Teca',
-        location: 'Barcelona',
-        type: "redMarker"
     }
+    // , {
+    //     img: image6,
+    //     title: 'Teca',
+    //     location: 'Barcelona',
+    //     type: "redMarker"
+    // }
     // , {
     //     img: image7,
     //     title: 'Pilo',

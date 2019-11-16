@@ -29,7 +29,7 @@ class Perdidos extends React.Component {
   render() {
 
     let aLostAnimals = [];
-    //tileDataDogs.push({target: "", title: "Animal", subtitle: "", icon: "", type: ""});
+   
     tileDataDogs.map((item, index) => (
       aLostAnimals.push({ target: "", title: item.title, subtitle: item.location, icon: item.img, type: item.type }))
     )

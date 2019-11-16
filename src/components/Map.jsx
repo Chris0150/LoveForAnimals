@@ -16,9 +16,9 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import user from '../assets/images/profiles/user.png';
-import dog from '../assets/images/profiles/dog.png';
-import cat from '../assets/images/profiles/cat2.jpeg';
-import cat2 from '../assets/images/profiles/bannercat.jpg';
+import dogLost from '../assets/images/dogs/1.jpg';
+import catDetected from '../assets/images/cats/catDetected.jpeg';
+import catFound from '../assets/images/cats/1.jpg';
 import Popover from '@material-ui/core/Popover';
 import GoogleSearchBar from "./GoogleSearchBar";
 import "./Map.css";
@@ -74,18 +74,30 @@ export default function SimpleSelect(props) {
   let zoom = props.zoom ? props.zoom : defaultProps.zoom;
 
   if (props.markerColor === "red") {
-    style = {borderRadius: "50%", animation: "pulseRed 2s infinite"};
+    style = {
+      borderRadius: "50%", 
+      animation: "pulseRed 2s infinite"
+    };
     markerColor = redMarker;
-    thumbnail = dog;
+    thumbnail = dogLost;
     name = "Luna";
     text = "Perdida el día 18/12/19 en el Parque de la Sagrada Família.";
   }
   else if (props.markerColor === "orange") {
-    style = {borderRadius: "50%", animation: "pulseYellow 2s infinite"};
+    style = {
+      borderRadius: "50%", 
+      animation: "pulseYellow 2s infinite"
+    };
     markerColor = orangeMarker;
-    thumbnail = cat;
+    thumbnail = catDetected;
     name = "Estrella";
     text = "Avistada el día 18/12/19 en el Centro de Barcelona";
+  }
+  else if (props.markerColor === "green") {
+    markerColor = greenMarker;
+    thumbnail = catFound;
+    name = "Ceres";
+    text = "Encontrada el día 18/12/19 por User23.";
   }
   else if (props.markerColor === "blue") {
     markerColor = blueMarker;
@@ -99,23 +111,12 @@ export default function SimpleSelect(props) {
     name = "User2";
     text = "Miembro desde 2017";
   }
-  else if (props.markerColor === "green") {
-    markerColor = greenMarker;
-    thumbnail = cat2;
-    name = "Ío & Ceres";
-    text = "Encontrados el día 18/12/19 por Maia.";
-  }
+
   else if (props.markerColor === "white") {
     markerColor = whiteMarker;
-    thumbnail = cat2;
-    name = "Ío & Ceres";
-    text = "Encontrados el día 18/12/19 por Maia.";
   }
   else if (props.markerColor === "violet") {
     markerColor = violetMarker;
-    thumbnail = cat2;
-    name = "Ío & Ceres";
-    text = "Encontrados el día 18/12/19 por Maia.";
   }
   else if (props.markerColor === "none") {
     markerColor = "";

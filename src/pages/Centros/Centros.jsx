@@ -42,6 +42,7 @@ class Centros extends React.Component {
         <Map markerColor="violet" showPopover={false} showSearchBar={true} height={"30vh"} width={"100vh"} />
         <List
           items={ListVets}
+          showPhone={true}
           showRating={false}
           maxHeight={"45vh"}
           overflow="auto"
