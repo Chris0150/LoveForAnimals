@@ -10,7 +10,7 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import vet from "../../../assets/images/icons/vet.png";
 import profileCat from "../../../assets/images/profiles/cat.jpg";
-import bannerVet from "../../../assets/images/vets/12.jpg";
+import bannerVet from "../../../assets/images/vets/wide2.jpg";
 import healthdog from "../../../assets/images/icons/healthdog.png";
 import conedog from "../../../assets/images/icons/conedog.png";
 

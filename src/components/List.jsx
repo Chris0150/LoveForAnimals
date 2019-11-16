@@ -42,13 +42,14 @@ export default function FolderList(props) {
                 height={item.iconHeight ? item.iconHeight : "50px"} />
             </ListItemAvatar>
             <ListItemText primary={item.title} secondary={item.subtitle} />
+            
             <ListItemSecondaryAction>
 
-              {/* Phone Number */}
-              {props.showPhone === true ?
+              {/* OpeningHours */}
+              {props.showOpHours === true ?
                 <ListItemIcon>
-                   <Typography variant="caption" style={{ display: "block", textAlign: "" }} gutterBottom>
-                  {item.phone}
+                   <Typography variant="caption" style={{ display: "block"}}>
+                   {(Math.random() > 0.5 ? "Abierto" : "Cerrado")}
                   </Typography>
                 </ListItemIcon>
                 : null}
