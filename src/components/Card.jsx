@@ -12,12 +12,14 @@ import Typography from '@material-ui/core/Typography';
 const useStyles = makeStyles({
   card: {
     '&:nth-of-type(even)': {
-     textAlign: "end"
+      textAlign: "end"
     },
     boxShadow: "5px 5px 5px #3f3f3f",
     margin: 10,
     marginTop: 15,
-    backgroundColor: "#dcdcdc"
+    backgroundColor: "#dcdcdc",
+    border: "outset",    
+    width: "90%",
   },
   img: {
     position: "absolute",
@@ -33,21 +35,14 @@ export default function ImgMediaCard(props) {
   return (
     <Card className={classes.card}>
       <CardActionArea>
-        <CardMedia
-          component="img"
-          alt=""
-          height={props.height}
-          image={props.image}
-          title=""
-        />
+        <CardMedia component="img" alt="" height={props.height} image={props.image} title="" />
         <CardContent>
           <img src={props.icon} alt="" height="40px" className={classes.img} />
           <Typography gutterBottom variant="h6" component="h2">
-          {props.title}
+            {props.title}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-          {props.subtitle}
-         
+            {props.subtitle}
           </Typography>
         </CardContent>
       </CardActionArea>

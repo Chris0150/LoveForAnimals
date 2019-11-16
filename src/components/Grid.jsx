@@ -17,7 +17,7 @@ const useStyles = makeStyles(theme => ({
     margin: theme.spacing(1),
     display: "block",
     textTransform: "none",
-    borderColor: "transparent"
+    //borderColor: "transparent"
 
   },
   grid: {
@@ -29,6 +29,8 @@ const useStyles = makeStyles(theme => ({
   },
   group: {
     height: "100%",
+    //display: "block",
+    // width: "fit-content"
   },
   legend2: {
     backgroundColor: "silver",

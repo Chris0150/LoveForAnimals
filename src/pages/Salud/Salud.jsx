@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from "react-redux";
 import './Salud.css';
+import Typography from '@material-ui/core/Typography';
 import NavBar from '../../components/NavBar';
 import Card from '../../components/Card';
-import Grid from "../../components/Grid";
 import adoptdog from '../../assets/images/icons/adoptdog.png';
 
 import dog from "../../assets/images/icons/dog.png";
@@ -33,7 +33,7 @@ import training_bunny from '../../assets/images/salud/training_bunny.jpg';
 import friends_bunny from '../../assets/images/salud/friends_bunny.jpg';
 import bath_bunny from '../../assets/images/salud/bath_bunny.jpg';
 import food_bunny from '../../assets/images/salud/food_bunny.jpg';
-
+import VerticalTabPanel from "../../components/VerticalTabPanel";
 
 class Salud extends React.Component {
   constructor(props) {
@@ -55,7 +55,9 @@ class Salud extends React.Component {
     this.props.history.goBack();
   }
 
-  onClick = (event) => {
+  onClick = (event, value) => {
+    debugger;
+
     var typeSrc = event.target.src;
     if (!typeSrc) return;
 
@@ -88,27 +90,43 @@ class Salud extends React.Component {
   }
 
   render() {
+    let aIcons = [];
+    aIcons.push(<div>
+      <img src={dog} alt="" width={50} />
+      <Typography variant="caption" style={{ textTransform: "initial", display: "block", marginBottom: 20 }}>Perros</Typography>
+    </div>);
+    aIcons.push(<div>
+      <img src={cat} alt="" width={50} />
+      <Typography variant="caption" style={{ textTransform: "initial", display: "block", marginBottom: 20 }}>Gatos</Typography>
+    </div>);
+    aIcons.push(<div>
+      <img src={rabbit} alt="" width={50} />
+      <Typography variant="caption" style={{ textTransform: "initial", display: "block", marginBottom: 20 }}>Conejos</Typography>
+    </div>);
+    aIcons.push(<div>
+      <img src={turtle} alt="" width={50} />
+      <Typography variant="caption" style={{  textTransform: "initial", display: "block", marginBottom: 20 }}>Tortugas</Typography>
+    </div>);
+    aIcons.push(<div>
+      <img src={fish} alt="" width={50} />
+      <Typography variant="caption" style={{  textTransform: "initial", display: "block", marginBottom: 20 }}>Peces</Typography>
+    </div>);
 
-    // Top grid
-    let aCategories = [];
-    aCategories.push({ icon: dog });
-    aCategories.push({ icon: cat });
-    aCategories.push({ icon: rabbit });
-    aCategories.push({ icon: turtle });
-    aCategories.push({ icon: fish });
+    let aCards = [];
+    aCards.push(<Card key={0} title="Introducción" subtitle="Primeros pasos" image={this.state.firststep} height={150} icon={adoptdog} />);
+    aCards.push(<Card key={1} title="Jóvenes" subtitle="Desarrollo y aprendizaje" image={this.state.young} height={150} icon={adoptdog} />);
+    aCards.push(<Card key={2} title="Enseñanza" subtitle="Buenas prácticas y métodos recomendados" image={this.state.training} height={150} icon={adoptdog} />);
+    aCards.push(<Card key={3} title="Salud y Cuidados" subtitle="Higiene y bienestar" image={this.state.bath} height={150} icon={adoptdog} />);
+    aCards.push(<Card key={4} title="Dieta y Nutrición" subtitle="Requerimientos y necesidades" image={this.state.food} height={150} icon={adoptdog} />);
+    aCards.push(<Card key={5} title="Convivencia" subtitle="Espacios en común y coexistencia" image={this.state.friends} height={150} icon={adoptdog} />);
 
     return (
       <div>
         <NavBar handleNavBack={this.handleNavBack} title="Salud y Consejos" />
-        <Grid onClick={this.onClick} items={aCategories} />
-        <div style={{ maxHeight: "75vh", overflow: "auto" }}>
-          <Card title="Introducción" subtitle="Primeros pasos" image={this.state.firststep} height={150} icon={adoptdog} />
-          <Card title="Jóvenes" subtitle="Desarrollo y aprendizaje" image={this.state.young} height={150} icon={adoptdog} />
-          <Card title="Enseñanza" subtitle="Buenas prácticas y métodos recomendados" image={this.state.training} height={150} icon={adoptdog} />
-          <Card title="Salud y Cuidados" subtitle="Higiene y bienestar" image={this.state.bath} height={150} icon={adoptdog} />
-          <Card title="Dieta y Nutrición" subtitle="Requerimientos y necesidades" image={this.state.food} height={150} icon={adoptdog} />
-          <Card title="Convivencia" subtitle="Espacios en común y coexistencia" image={this.state.friends} height={150} icon={adoptdog} />
-        </div>
+        <Typography variant="subtitle1" style={{ display: "block", fontWeight: "bold", margin: 10 }} gutterBottom>
+          Selecciona una categoría:
+        </Typography>
+        <VerticalTabPanel icons={aIcons} items={aCards} change={this.onClick} />
       </div>
     );
   }
