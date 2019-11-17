@@ -4,12 +4,11 @@ import NavBar from '../../components/NavBar';
 import BottomBar from '../../components/BottomBar';
 import TabPanel from '../../components/TabPanel';
 import List from "../../components/List";
-import Map from '../../components/Map';
+import Map from 'pigeon-maps'
+import Marker from 'pigeon-marker/react'
 import { connect } from "react-redux";
 import MenuIcon from '@material-ui/icons/Menu';
 import tileDataDogs from '../../assets/data/GridListDataDogs';
-// import Button from '@material-ui/core/Button';
-// import lost2 from "../../assets/images/icons/lost2.png";
 
 class Perdidos extends React.Component {
   // eslint-disable-next-line
@@ -26,41 +25,58 @@ class Perdidos extends React.Component {
     this.props.history.goBack();
   }
 
-  render() {
+  // NOTE:
+  // Add the class pigeon-drag-block to disable dragging on the overlay. 
+  // Add the class pigeon-click-block to disable map background clicks on the element.
 
+  render() {
     let aLostAnimals = [];
-   
-    tileDataDogs.map((item, index) => (
+    let markers = [];
+
+    tileDataDogs.map((item) => (
       aLostAnimals.push({ target: "", title: item.title, subtitle: item.location, icon: item.img, type: item.type }))
     )
 
-    let aMaps = [];
-    aMaps.push(
-       <div style={{ backgroundImage: "" }}>
-         {/* <div style={{ display: "flex" }}>
-           <img src={lost2} style={{
-             width: 75,
-             marginTop: 15
-           }}
-             alt=""></img>
-           <Button variant="contained" style={{
-             backgroundColor: "transparent",
-             boxShadow: "none"
-           }}
-           >Tablón
-         </Button> 
-         <Button variant="contained" style={{
-             backgroundColor: "transparent",
-             boxShadow: "none"
-           }}
-           >Estado
-         </Button>
-         </div> */}
+    tileDataDogs.map(user => (
+      markers.push(user.coords)
+    ))
+
+    let aPages = [];
+    aPages.push(
+      <div>
         <List showLostMarker={true} items={aLostAnimals} maxHeight={"75vh"} overflow="auto" />
-      </div>);
-    aMaps.push(<Map markerColor="red" showPopover={true} showSearchBar={false} height={"75vh"} width={"100vh"} zoom={14}/>);
-    aMaps.push(<Map markerColor="orange" showPopover={true} showSearchBar={false} height={"75vh"} width={"100vh"} zoom={14}/>);
-    aMaps.push(<Map markerColor="green" showPopover={true} showSearchBar={false} height={"75vh"} width={"100vh"} zoom={14}/>);
+      </div>
+    );
+
+    aPages.push(
+      <div>
+        <Map center={[41.403611, 2.174444]} zoom={14} width={400} height={600}>
+          {Object.keys(markers).map(key => (
+            <Marker key={key} anchor={markers[key][0]} payload={key} onClick={this.handleMarkerClick} />
+          ))}
+        </Map>
+      </div>
+    );
+
+    aPages.push(
+      <div>
+        <Map center={[41.403611, 2.174444]} zoom={14} width={400} height={600}>
+          {Object.keys(markers).map(key => (
+            <Marker key={key} anchor={markers[key][0]} payload={key} onClick={this.handleMarkerClick} />
+          ))}
+        </Map>
+      </div>
+    );
+
+    aPages.push(
+      <div>
+        <Map center={[41.403611, 2.174444]} zoom={14} width={400} height={600}>
+          {Object.keys(markers).map(key => (
+            <Marker key={key} anchor={markers[key][0]} payload={key} onClick={this.handleMarkerClick} />
+          ))}
+        </Map>
+      </div>
+    );
 
     return (
       <div>
@@ -70,11 +86,10 @@ class Perdidos extends React.Component {
           tab2="Perdidos"
           tab3="Detectados"
           tab4="Encontrados"
-          // variant="fullWidth"
           orientation="horizontal"
-          items={aMaps}
+          items={aPages}
         />
-        <BottomBar type="lost"/>
+        <BottomBar type="lost" />
       </div>
     );
   }

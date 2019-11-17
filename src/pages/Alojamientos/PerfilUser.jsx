@@ -9,7 +9,8 @@ import Typography from '@material-ui/core/Typography';
 import User from '../../assets/images/profiles/user.png';
 import ListUsers from '../../assets/data/ListUsers';
 import GridList from '../../components/GridList';
-import Map from '../../components/Map';
+import Map from 'pigeon-maps'
+import Marker from 'pigeon-marker/react'
 import Button from '@material-ui/core/Button';
 
 import adoptdog from "../../assets/images/icons/adoptdog.png";
@@ -47,7 +48,6 @@ class PerfilUser extends React.Component {
           <Typography variant="caption" style={{ fontWeight: "bold", display: "block", textAlign: "center" }} gutterBottom>
             Valoraciones:
           </Typography>
-
           <List
             items={ListUsers}
             showRating={true}
@@ -55,30 +55,30 @@ class PerfilUser extends React.Component {
             maxHeight={"33vh"}
             overflow="auto"
           />
-
         </div>
       </div>
     );
-
 
     // Imagenes
     tabs.push(
       <div>
-        <GridList type="User" showFooter={false}/>
+        <GridList type="User" showFooter={false} />
       </div>
     );
 
-    // 
+    // Reservas
     tabs.push(
       <div style={{ padding: 15 }}>
-        <div style={{display: "grid"}}>
+        <div style={{ display: "grid" }}>
           <DatePicker type="Inicial" />
           <DatePicker type="Final" />
         </div>
         <Typography variant="caption" style={{ display: "block", margin: 10 }} gutterBottom>
-          Área de movilidad:
+          Zona aproximada de residencia:
           </Typography>
-        <Map markerColor="none" zoom={15} showPopover={false} showSearchBar={false} height={"25vh"} width={"100vh"} />
+        <Map center={[41.403611, 2.174444]} zoom={14} width={360} height={200}>
+          <Marker key={1} anchor={[41.403611, 2.174444]} payload={1} onClick={this.handleMarkerClick} />
+        </Map>
         <Button style={{
           // marginTop: "40%",
           textAlign: "center",
@@ -92,7 +92,6 @@ class PerfilUser extends React.Component {
           <img src={adoptdog} alt="" width="30px" />
           Enviar reserva
            </Button>
-
       </div>
     );
 

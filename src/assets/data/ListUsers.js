@@ -26,7 +26,8 @@ const tileData = [
         subtitle: 'Disponible',
         location: 'Av. Diagonal 137',
         target: '/PerfilUser',
-        feedback: 'Volveré a reservar!'
+        feedback: 'Volveré a reservar!',
+        coords: [[41.409, 2.1742], 13]
     },
     {
         icon: image2,
@@ -34,7 +35,8 @@ const tileData = [
         subtitle: 'Disponible',
         location: 'Av. Llacuna 212',
         target: '/PerfilUser',
-        feedback: 'Todo perfecto!'
+        feedback: 'Todo perfecto!',
+        coords: [[41.413, 2.1744], 13]
     }, 
     {
         icon: image3,
@@ -42,7 +44,8 @@ const tileData = [
         subtitle: 'Disponible',
         location: 'c/Pallars 147',
         target: '/PerfilUser',
-        feedback: 'Siempre responde inmediatamente!'
+        feedback: 'Siempre responde inmediatamente!',
+        coords: [[41.423, 2.1749], 13]
     }, 
     {
         icon: image4,
@@ -50,7 +53,8 @@ const tileData = [
         subtitle: 'Disponible',
         location: 'Av. Llacuna 412',
         target: '/PerfilUser',
-        feedback: 'Muy bien, gracias.'
+        feedback: 'Muy bien, gracias.',
+        coords: [[41.429, 2.1754], 13]
     }, 
     {
         icon: image5,
@@ -58,7 +62,8 @@ const tileData = [
         subtitle: 'Disponible',
         location: 'c/Pallars 195',
         target: '/PerfilUser',
-        feedback: 'Perfecto'
+        feedback: 'Perfecto',
+        coords: [[41.433, 2.1769], 13]
     }, 
     {
         icon: image6,
@@ -66,7 +71,8 @@ const tileData = [
         subtitle: 'Disponible',
         location: 'Av. Diagonal 137',
         target: '/PerfilUser',
-        feedback: 'Muy rápido y amable!'
+        feedback: 'Muy rápido y amable!',
+        coords: [[41.449, 2.1772], 13]
     }, 
     {
         icon: image7,
@@ -74,7 +80,8 @@ const tileData = [
         subtitle: 'Disponible',
         location: 'Av. Llacuna 12',
         target: '/PerfilUser',
-        feedback: 'Muy atento'
+        feedback: 'Muy atento',
+        coords: [[41.401, 2.1701], 13]
     }, 
     {
         icon: image8,
@@ -82,7 +89,8 @@ const tileData = [
         subtitle: 'Disponible',
         location: 'Av. Diagonal 21',
         target: '/PerfilUser',
-        feedback: 'LLegó un poco tarde..'
+        feedback: 'LLegó un poco tarde..',
+        coords: [[41.480, 2.1760], 13]
     }, 
     {
         icon: image9,
@@ -90,7 +98,8 @@ const tileData = [
         subtitle: 'Disponible',
         location: 'Av. Diagonal 195',
         target: '/PerfilUser',
-        feedback: 'Genial, gracias de nuevo!'
+        feedback: 'Genial, gracias de nuevo!',
+        coords: [[41.495, 2.1770], 13]
     }, 
     {
         icon: image10,
@@ -98,7 +107,8 @@ const tileData = [
         subtitle: 'Disponible',
         location: 'Av. Llacuna 25',
         target: '/PerfilUser',
-        feedback: 'Muy bien'
+        feedback: 'Muy bien',
+        coords: [[41.403, 2.1744], 13]
     },
     {
         icon: image11,
@@ -106,7 +116,8 @@ const tileData = [
         subtitle: 'Disponible',
         location: 'Av. Diagonal 137',
         target: '/PerfilUser',
-        feedback: 'Aceptó la reserva inmediatamente!'
+        feedback: 'Aceptó la reserva inmediatamente!',
+        coords: [[41.403, 2.1744], 13]
     },
     {
         icon: image12,
@@ -114,7 +125,8 @@ const tileData = [
         subtitle: 'Disponible',
         location: 'Av. Llacuna 212',
         target: '/PerfilUser',
-        feedback: 'Perfecto!'
+        feedback: 'Perfecto!',
+        coords: [[41.403, 2.1744], 13]
     }, 
     {
         icon: image13,
@@ -122,7 +134,8 @@ const tileData = [
         subtitle: 'Disponible',
         location: 'c/Pallars 147',
         target: '/PerfilUser',
-        feedback: 'Genial, muy recomendado!'
+        feedback: 'Genial, muy recomendado!',
+        coords: [[41.403, 2.1744], 13]
     }, 
     {
         icon: image14,
@@ -130,7 +143,8 @@ const tileData = [
         subtitle: 'Disponible',
         location: 'Av. Llacuna 412',
         target: '/PerfilUser',
-        feedback: 'Gracias'
+        feedback: 'Gracias',
+        coords: [[41.403, 2.1744], 13]
     }, 
     {
         icon: image15,
@@ -138,7 +152,8 @@ const tileData = [
         subtitle: 'Disponible',
         location: 'c/Pallars 195',
         target: '/PerfilUser',
-        feedback: 'Todo correcto, volveré a reservar.'
+        feedback: 'Todo correcto, volveré a reservar.',
+        coords: [[41.403, 2.1744], 13]
     }, 
     {
         icon: image16,
@@ -146,7 +161,8 @@ const tileData = [
         subtitle: 'Disponible',
         location: 'Av. Diagonal 137',
         target: '/PerfilUser',
-        feedback: 'Muy bien'
+        feedback: 'Muy bien',
+        coords: [[41.403, 2.1744], 13]
     }, 
     {
         icon: image17,
@@ -154,7 +170,8 @@ const tileData = [
         subtitle: 'Disponible',
         location: 'Av. Llacuna 12',
         target: '/PerfilUser',
-        feedback: 'Genial'
+        feedback: 'Genial',
+        coords: [[41.403, 2.1744], 13]
     }, 
     {
         icon: image18,
@@ -162,7 +179,8 @@ const tileData = [
         subtitle: 'Disponible',
         location: 'Av. Diagonal 21',
         target: '/PerfilUser',
-        feedback: 'Volveré a reservar'
+        feedback: 'Volveré a reservar',
+        coords: [[41.403, 2.1744], 13]
     }, 
     {
         icon: image19,
@@ -170,7 +188,8 @@ const tileData = [
         subtitle: 'Disponible',
         location: 'Av. Diagonal 195',
         target: '/PerfilUser',
-        feedback: 'Muy rápido y atento, recomendado!'
+        feedback: 'Muy rápido y atento, recomendado!',
+        coords: [[41.403, 2.1744], 13]
     }, 
     {
         icon: image20,
@@ -178,7 +197,8 @@ const tileData = [
         subtitle: 'Disponible',
         location: 'Av. Llacuna 25',
         target: '/PerfilUser',
-        feedback: 'Todo muy bien!'
+        feedback: 'Todo muy bien!',
+        coords: [[41.403, 2.1744], 13]
     },
 ];
 

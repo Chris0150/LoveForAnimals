@@ -56,7 +56,6 @@ class Salud extends React.Component {
   }
 
   onClick = (event, value) => {
-    debugger;
 
     var typeSrc = event.target.src;
     if (!typeSrc) return;

@@ -38,7 +38,8 @@ const tileData = [
         phone: '933.030.818',
         target: '/PerfilCentro',
         iconWidth : "75px",
-        iconHeight : "75px"
+        iconHeight : "75px",
+        coords: [[41.403, 2.1744], 13]
     }, {
         icon: image2,
         title: 'Gats del Carrer',
@@ -47,7 +48,8 @@ const tileData = [
         phone: "934.279.729",
         target: '/PerfilCentro',
         iconWidth : "75px",
-        iconHeight : "75px"
+        iconHeight : "75px",
+        coords: [[41.404, 2.1745], 13]
     }, {
         icon: image3,
         title: 'Adopta un Amic',
@@ -56,7 +58,8 @@ const tileData = [
         phone: '933.133.267',
         target: '/PerfilCentro',
         iconWidth : "75px",
-        iconHeight : "75px"
+        iconHeight : "75px",
+        coords: [[41.405, 2.1746], 13]
     }, {
         icon: image4,
         title: 'ADAP - Penedès',
@@ -65,7 +68,8 @@ const tileData = [
         phone: "934.912.367",
         target: '/PerfilCentro',
         iconWidth : "75px",
-        iconHeight : "75px"
+        iconHeight : "75px",
+        coords: [[41.406, 2.1747], 13]
     }, {
         icon: image5,
         title: 'Asociación ADAINC',
@@ -74,7 +78,8 @@ const tileData = [
         phone: "932.324.521",
         target: '/PerfilCentro',
         iconWidth : "75px",
-        iconHeight : "75px"
+        iconHeight : "75px",
+        coords: [[41.407, 2.1744], 13]
     }, {
         icon: image6,
         title: 'Asociación para el rescate y adopción',
@@ -83,7 +88,8 @@ const tileData = [
         phone: "933.405.554",
         target: '/PerfilCentro',
         iconWidth : "75px",
-        iconHeight : "75px"
+        iconHeight : "75px",
+        coords: [[41.408, 2.1744], 13]
     }, {
         icon: image7,
         title: 'Advam Montcada',
@@ -92,7 +98,8 @@ const tileData = [
         phone: "933.522.654",
         target: '/PerfilCentro',
         iconWidth : "75px",
-        iconHeight : "75px"
+        iconHeight : "75px",
+        coords: [[41.409, 2.1744], 13]
     }, {
         icon: image8,
         title: 'Vilanimal',
@@ -101,7 +108,8 @@ const tileData = [
         phone: "935.116.828",
         target: '/PerfilCentro',
         iconWidth : "75px",
-        iconHeight : "75px"
+        iconHeight : "75px",
+        coords: [[41.410, 2.1744], 13]
     }, {
         icon: image9,
         title: 'APAN Molins',
@@ -110,7 +118,8 @@ const tileData = [
         phone: "934.510.404",
         target: '/PerfilCentro',
         iconWidth : "75px",
-        iconHeight : "75px"
+        iconHeight : "75px",
+        coords: [[41.403, 2.1744], 13]
     }, {
         icon: image10,
         title: 'ABAM I APROPA´T',
@@ -119,7 +128,8 @@ const tileData = [
         phone: "934.322.570",
         target: '/PerfilCentro',
         iconWidth : "75px",
-        iconHeight : "75px"
+        iconHeight : "75px",
+        coords: [[41.403, 2.1744], 13]
     },
     {
         icon: image11,
@@ -129,7 +139,8 @@ const tileData = [
         phone: "934.231.171",
         target: '/PerfilCentro',
         iconWidth : "75px",
-        iconHeight : "75px"
+        iconHeight : "75px",
+        coords: [[41.403, 2.1744], 13]
     }, {
         icon: image12,
         title: 'Amics dels Animals',
@@ -138,7 +149,8 @@ const tileData = [
         phone: "934.912.367",
         target: '/PerfilCentro',
         iconWidth : "75px",
-        iconHeight : "75px"
+        iconHeight : "75px",
+        coords: [[41.403, 2.1744], 13]
     }, {
         icon: image13,
         title: 'Asociación Protectora de Hurones',
@@ -147,7 +159,8 @@ const tileData = [
         phone: "934.237.711",
         target: '/PerfilCentro',
         iconWidth : "75px",
-        iconHeight : "75px"
+        iconHeight : "75px",
+        coords: [[41.403, 2.1744], 13]
     }, {
         icon: image14,
         title: 'Amics I Protectors dels Gats',
@@ -156,7 +169,8 @@ const tileData = [
         phone: "932.057.238",
         target: '/PerfilCentro',
         iconWidth : "75px",
-        iconHeight : "75px"
+        iconHeight : "75px",
+        coords: [[41.403, 2.1744], 13]
     }, {
         icon: image15,
         title: 'Global Defensa Gats',
@@ -165,7 +179,8 @@ const tileData = [
         phone: "32.053.116",
         target: '/PerfilCentro',
         iconWidth : "75px",
-        iconHeight : "75px"
+        iconHeight : "75px",
+        coords: [[41.403, 2.1744], 13]
     }, {
         icon: image16,
         title: 'Asociación para la Defensa de los Équidos',
@@ -174,7 +189,8 @@ const tileData = [
         phone: " 934.309.126",
         target: '/PerfilCentro',
         iconWidth : "75px",
-        iconHeight : "75px"
+        iconHeight : "75px",
+        coords: [[41.403, 2.1744], 13]
     }, {
         icon: image17,
         title: 'Can Bitxitos',
@@ -183,7 +199,8 @@ const tileData = [
         phone: "932.262.392",
         target: '/PerfilCentro',
         iconWidth : "75px",
-        iconHeight : "75px"
+        iconHeight : "75px",
+        coords: [[41.403, 2.1744], 13]
     }, {
         icon: image18,
         title: 'Associació Protectora de Animals de Ordal',
@@ -192,7 +209,8 @@ const tileData = [
         phone: "933.587.714",
         target: '/PerfilCentro',
         iconWidth : "75px",
-        iconHeight : "75px"
+        iconHeight : "75px",
+        coords: [[41.403, 2.1744], 13]
     }, {
         icon: image19,
         title: 'Protectora de animales PADE',
@@ -201,7 +219,8 @@ const tileData = [
         phone: "932.848.154",
         target: '/PerfilCentro',
         iconWidth : "75px",
-        iconHeight : "75px"
+        iconHeight : "75px",
+        coords: [[41.403, 2.1744], 13]
     }, {
         icon: image20,
         title: 'Volem Viure (A.P.A.V.V)',
@@ -210,7 +229,8 @@ const tileData = [
         phone: "933.528.056",
         target: '/PerfilCentro',
         iconWidth : "75px",
-        iconHeight : "75px"
+        iconHeight : "75px",
+        coords: [[41.403, 2.1744], 13]
     },
     {
         icon: image21,
@@ -220,7 +240,8 @@ const tileData = [
         phone: "933.119.459",
         target: '/PerfilCentro',
         iconWidth : "75px",
-        iconHeight : "75px"
+        iconHeight : "75px",
+        coords: [[41.403, 2.1744], 13]
     }, {
         icon: image22,
         title: 'Protectora de Animales de Sallent',
@@ -229,7 +250,8 @@ const tileData = [
         phone: "932.001.136",
         target: '/PerfilCentro',
         iconWidth : "75px",
-        iconHeight : "75px"
+        iconHeight : "75px",
+        coords: [[41.403, 2.1744], 13]
     }, {
         icon: image23,
         title: 'BadaGats',
@@ -238,7 +260,8 @@ const tileData = [
         phone: "933.561.173",
         target: '/PerfilCentro',
         iconWidth : "75px",
-        iconHeight : "75px"
+        iconHeight : "75px",
+        coords: [[41.403, 2.1744], 13]
     }, {
         icon: image24,
         title: 'SOS Gats',
@@ -247,7 +270,8 @@ const tileData = [
         phone: "934.582.873",
         target: '/PerfilCentro',
         iconWidth : "75px",
-        iconHeight : "75px"
+        iconHeight : "75px",
+        coords: [[41.403, 2.1744], 13]
     }, {
         icon: image25,
         title: 'Barcelona Gat i Gos',
@@ -256,7 +280,8 @@ const tileData = [
         phone: "931.173.173",
         target: '/PerfilCentro',
         iconWidth : "75px",
-        iconHeight : "75px"
+        iconHeight : "75px",
+        coords: [[41.403, 2.1744], 13]
     }, {
         icon: image26,
         title: 'Gats Vallromanes',
@@ -265,7 +290,8 @@ const tileData = [
         phone: "932.460.805",
         target: '/PerfilCentro',
         iconWidth : "75px",
-        iconHeight : "75px"
+        iconHeight : "75px",
+        coords: [[41.403, 2.1744], 13]
     }, {
         icon: image27,
         title: 'Associació protectora del Garraf',
@@ -274,7 +300,8 @@ const tileData = [
         phone: "932.657.293",
         target: '/PerfilCentro',
         iconWidth : "75px",
-        iconHeight : "75px"
+        iconHeight : "75px",
+        coords: [[41.403, 2.1744], 13]
     }, {
         icon: image28,
         title: 'Protectora APAN',
@@ -283,7 +310,8 @@ const tileData = [
         phone: "937.070.249",
         target: '/PerfilCentro',
         iconWidth : "75px",
-        iconHeight : "75px"
+        iconHeight : "75px",
+        coords: [[41.403, 2.1744], 13]
     }, {
         icon: image29,
         title: 'HelpGuau',
@@ -292,7 +320,8 @@ const tileData = [
         phone: "934.539.879",
         target: '/PerfilCentro',
         iconWidth : "75px",
-        iconHeight : "75px"
+        iconHeight : "75px",
+        coords: [[41.403, 2.1744], 13]
     }, {
         icon: image30,
         title: 'Associació pel Benestar dels Animals de Montgat',
@@ -301,7 +330,8 @@ const tileData = [
         phone: "932.110.204",
         target: '/PerfilCentro',
         iconWidth : "75px",
-        iconHeight : "75px"
+        iconHeight : "75px",
+        coords: [[41.403, 2.1744], 13]
     }
 ];
 

@@ -37,171 +37,202 @@ const tileData = [
         title: 'Mila',
         location: 'Barcelona',
         cols: 2,
-        type: "redMarker"
+        type: "redMarker",
+        coords: [[41.403, 2.1744], 13]
     }, {
         img: image2,
         title: 'Kuna',
         location: 'Barcelona',
-        type: "redMarker"
+        type: "redMarker",
+        coords: [[41.403, 2.1744], 13]
     }, {
         img: image3,
         title: 'Tera',
         location: 'Barcelona',
-        type: "greenMarker"
+        type: "greenMarker",
+        coords: [[41.403, 2.1744], 13]
     }, {
         img: image4,
         title: 'Sura',
         location: 'Barcelona',
-        type: "redMarker"
+        type: "redMarker",
+        coords: [[41.403, 2.1744], 13]
     }, {
         img: image5,
         title: 'Mico',
         location: 'Barcelona',
-        type: "orangeMarker"
+        type: "orangeMarker",
+        coords: [[41.403, 2.1744], 13]
     }, {
         img: image6,
         title: 'Teca',
         location: 'Barcelona',
-        type: "redMarker"
+        type: "redMarker",
+        coords: [[41.403, 2.1744], 13]
     }, {
         img: image7,
         title: 'Pilo',
         location: 'Barcelona',
-        type: "greenMarker"
+        type: "greenMarker",
+        coords: [[41.403, 2.1744], 13]
     }, {
         img: image8,
         title: 'Mota',
         location: 'Barcelona',
-        type: "greenMarker"
+        type: "greenMarker",
+        coords: [[41.403, 2.1744], 13]
     }, {
         img: image9,
         title: 'Puca',
-        location: 'Barcelona', 
+        location: 'Barcelona',
         cols: 2,
-        type: "redMarker"
+        type: "redMarker",
+        coords: [[41.403, 2.1744], 13]
     }, {
         img: image10,
         title: 'Sena',
         location: 'Barcelona',
-        type: "redMarker"
+        type: "redMarker",
+        coords: [[41.403, 2.1744], 13]
     }, {
         img: image11,
         title: 'Fido',
         location: 'Barcelona',
-        type: "orangeMarker"
+        type: "orangeMarker",
+        coords: [[41.403, 2.1744], 13]
     }, {
         img: image12,
         title: 'Lupa',
         location: 'Barcelona',
-        type: "redMarker"
-    }
-     , {
-         img: image13,
-         title: 'Cola',
+        type: "redMarker",
+        coords: [[41.403, 2.1744], 13]
+    }, {
+        img: image13,
+        title: 'Cola',
         location: 'Barcelona',
-        type: "greenMarker"
-     }, {
+        type: "greenMarker",
+        coords: [[41.403, 2.1744], 13]
+    }, {
         img: image14,
         title: 'Gula',
-        location: 'Barcelona', 
+        location: 'Barcelona',
         cols: 2,
-        type: "redMarker"
+        type: "redMarker",
+        coords: [[41.403, 2.1744], 13]
     }, {
         img: image15,
         title: 'Zola',
         location: 'Barcelona',
-        type: "orangeMarker"
+        type: "orangeMarker",
+        coords: [[41.403, 2.1744], 13]
     }, {
         img: image16,
         title: 'Lera',
         location: 'Barcelona',
-        type: "redMarker"
+        type: "redMarker",
+        coords: [[41.403, 2.1744], 13]
     }, {
         img: image17,
         title: 'Musa',
         location: 'Barcelona',
         type: "orangeMarker",
-        cols: 2
+        cols: 2,
+        coords: [[41.403, 2.1744], 13]
     }, {
         img: image18,
         title: 'Mico',
         location: 'Barcelona',
-        type: "redMarker"
+        type: "redMarker",
+        coords: [[41.403, 2.1744], 13]
     }, {
         img: image19,
         title: 'Taco',
         location: 'Barcelona',
-        type: "orangeMarker"
+        type: "orangeMarker",
+        coords: [[41.403, 2.1744], 13]
     }, {
         img: image20,
         title: 'Mila',
         location: 'Barcelona',
-        type: "greenMarker"
+        type: "greenMarker",
+        coords: [[41.403, 2.1744], 13]
     }, {
         img: image21,
         title: 'Kuna',
         location: 'Barcelona',
         type: "greenMarker",
-        cols: 2
+        cols: 2,
+        coords: [[41.403, 2.1744], 13]
     }, {
         img: image22,
         title: 'Mico',
         location: 'Barcelona',
-        type: "redMarker"
-    },{
+        type: "redMarker",
+        coords: [[41.403, 2.1744], 13]
+    }, {
         img: image23,
         title: 'Tera',
         location: 'Barcelona',
-        type: "redMarker"
+        type: "redMarker",
+        coords: [[41.403, 2.1744], 13]
     }, {
         img: image24,
         title: 'Sura',
         location: 'Barcelona',
         type: "greenMarker",
-        cols: 2
-    },{
+        cols: 2,
+        coords: [[41.403, 2.1744], 13]
+    }, {
         img: image25,
         title: 'Kuna',
         location: 'Barcelona',
         cols: 2,
-        type: "orangeMarker"
-    } , {
+        type: "orangeMarker",
+        coords: [[41.403, 2.1744], 13]
+    }, {
         img: image26,
         title: 'Teca',
         location: 'Barcelona',
-        type: "greenMarker"
+        type: "greenMarker",
+        coords: [[41.403, 2.1744], 13]
     }, {
         img: image27,
         title: 'Pilo',
         location: 'Barcelona',
-        type: "orangeMarker"
+        type: "orangeMarker",
+        coords: [[41.415, 2.1744], 13]
     }, {
         img: image28,
         title: 'Mota',
         location: 'Barcelona',
-        type: "redMarker"
+        type: "redMarker",
+        coords: [[41.403, 2.1744], 13]
     }, {
         img: image29,
         title: 'Puca',
         location: 'Barcelona',
-        type: "greenMarker"
+        type: "greenMarker",
+        coords: [[41.403, 2.1744], 13]
     }, {
         img: image30,
         title: 'Sena',
-        location: 'Barcelona', 
+        location: 'Barcelona',
         cols: 2,
-        type: "orangeMarker"
+        type: "orangeMarker",
+        coords: [[41.403, 2.1744], 13]
     }, {
         img: image31,
         title: 'Fido',
         location: 'Barcelona',
-        type: "redMarker"
+        type: "redMarker",
+        coords: [[41.403, 2.1744], 13]
     }, {
         img: image32,
         title: 'Lupa',
         location: 'Barcelona',
         cols: 2,
-        type: "Encotrada"
+        type: "Encotrada",
+        coords: [[41.403, 2.1744], 13]
     }
 ];
 
