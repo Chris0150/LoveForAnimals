@@ -7,14 +7,23 @@ import TabPanel from '../../components/TabPanel';
 import List from "../../components/List";
 import Typography from '@material-ui/core/Typography';
 import User from '../../assets/images/centros/wide1.jpg';
+import adoptdog from "../../assets/images/icons/adoptdog.png";
 import ListUsers from '../../assets/data/ListUsers';
+import Map from 'pigeon-maps';
+
+const locations = {
+  "Barcelona": { "center": [41.403611, 2.174444], "zoom": 12 }
+}
 
 class PerfilCentro extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-    }
+    this.state = Object.assign({}, locations['Barcelona'], {
+      location: 'Barcelona',
+      animating: false,
+      animationStart: null
+    })
 
     this.handleNavBack = this.handleNavBack.bind(this);
   }
@@ -25,46 +34,67 @@ class PerfilCentro extends React.Component {
 
   render() {
 
+    const Marker = ({ left, top, style, children }) => (
+      <div style={{
+        position: 'absolute',
+        left: left - 15,
+        top: top - 30,
+        width: 30,
+        height: 30,
+        background: 'transparent',
+        ...(style || {})
+      }}>{children}</div>
+    )
+
     // Tabs
     let tabs = [];
     tabs.push(
       <div>
         <div>
-        <img src={User} alt="" style={{marginTop: 20, height: 200, width: "100%" }} />
-        <Typography variant="h6" style={{ display: "block", textAlign: "center" }} gutterBottom>Protectora Gat i Gos</Typography>
-        <div>
-          <Typography variant="caption" style={{ display: "block", textAlign: "center" }} gutterBottom>
-            c/Marina 139-145
+          <img src={User} alt="" style={{ marginTop: 20, height: 200, width: "100%" }} />
+          <Typography variant="h6" style={{ display: "block", textAlign: "center" }} gutterBottom>Protectora Gat i Gos</Typography>
+          <div>
+            <Typography variant="caption" style={{ display: "block", textAlign: "center" }} gutterBottom>
+              c/Marina 139-145
            </Typography>
-          <Typography variant="caption" style={{ display: "block", textAlign: "center" }} gutterBottom>
-            Barcelona 08005
+            <Typography variant="caption" style={{ display: "block", textAlign: "center" }} gutterBottom>
+              Barcelona 08005
            </Typography>
-        </div>
-        <Typography variant="caption" style={{display: "block", margin: 20 }} gutterBottom>
-          Últimas valoraciones:
+          </div>
+          <Typography variant="caption" style={{ display: "block", margin: 20 }} gutterBottom>
+            Últimas valoraciones:
         </Typography>
 
-        <List
-          items={ListUsers}
-          showFeedback={true}
-          showRating={true}
-          maxHeight={"30vh"}
-          overflow="auto"
-        />
-      </div>
+          <List
+            items={ListUsers}
+            showFeedback={true}
+            showRating={true}
+            maxHeight={"30vh"}
+            overflow="auto"
+          />
+        </div>
       </div>
     );
+    
+    // Imagenes
     tabs.push(
       <div>
-        <GridList type="Perros" showFooter={true}/>
+        <GridList type="Perros" showFooter={true} />
       </div>
-       ); 
+    );
 
-       tabs.push(
-        <div>
+    // Contacto
+    tabs.push(
+      <div>
+        <Map center={this.state.center} zoom={this.state.zoom} defaultWidth={400} height={400}>
+         
+            <Marker key={Math.random()} anchor={[41.423611, 2.179444]} onClick={this.handleMarkerClick}>
+              <img alt="" src={adoptdog} width={30} />
+            </Marker>
         
-        </div>
-         );
+        </Map>
+      </div>
+    );
 
     return (
       <div>

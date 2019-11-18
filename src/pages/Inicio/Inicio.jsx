@@ -34,6 +34,7 @@ class Inicio extends React.Component {
     aCategories.push({target: "/Alojamientos", title: "Alojamientos y paseos", subtitle: "498 Peticiones", icon: fetch});
     aCategories.push({target: "/Perdidos", title: "Animales Perdidos", subtitle: "968 en Búsqueda", icon: lost});
     aCategories.push({target: "/Salud", title: "Salud y Consejos", subtitle: "Nuevos consejos disponibles", icon: health});
+    
 
     return (
       <div>

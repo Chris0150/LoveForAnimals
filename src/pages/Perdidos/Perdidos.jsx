@@ -10,13 +10,20 @@ import MenuIcon from '@material-ui/icons/Menu';
 import tileDataDogs from '../../assets/data/GridListDataDogs';
 import dog from "../../assets/images/icons/dog.png";
 
+const locations = {
+  "Barcelona": { "center": [41.403611, 2.174444], "zoom": 12 }
+}
+
 class Perdidos extends React.Component {
   // eslint-disable-next-line
   constructor(props) {
     super(props);
 
-    this.state = {
-    };
+    this.state = Object.assign({}, locations['Barcelona'], {
+      location: 'Barcelona',
+      animating: false,
+      animationStart: null
+    })
 
     this.handleNavBack = this.handleNavBack.bind(this);
   }
@@ -26,12 +33,13 @@ class Perdidos extends React.Component {
   }
 
   render() {
+    // const animationOffset = 0
     let aLostAnimals = [];
     let aPages = [];
     let markers = [];
-    let redFilter = "grayscale(100%) brightness(40%) sepia(100%) hue-rotate(-50deg) saturate(600%) contrast(0.8)";
-    let yellowFilter = "grayscale(100%) brightness(115%) sepia(90%) hue-rotate(360deg) saturate(500%) contrast(1)";
-    let greenFilter = "grayscale(100%) brightness(40%) sepia(100%) hue-rotate(50deg) saturate(1000%) contrast(0.8)";
+    let redFilter = "grayscale(100%) brightness(35%) sepia(100%) hue-rotate(-50deg) saturate(1000%) contrast(0.8)";
+    let yellowFilter = "grayscale(100%) brightness(90%) sepia(90%) hue-rotate(360deg) saturate(500%) contrast(1)";
+    let greenFilter = "grayscale(100%) brightness(35%) sepia(100%) hue-rotate(50deg) saturate(2000%) contrast(0.8)";
 
     const Marker = ({ left, top, style, children }) => (
       <div style={{
@@ -62,49 +70,53 @@ class Perdidos extends React.Component {
 
     // Perdidos
     aPages.push(
-      <div>
-        <Map center={[41.403611, 2.174444]} zoom={14} width={400} height={600}>
+      <div style={{ textAlign: 'center', margin: '0 auto', maxWidth: window.innerWidth - 20 }}>
+        
+        <Map center={this.state.center} zoom={this.state.zoom} defaultWidth={window.innerWidth - 20} height={window.innerHeight - 175}>
           {Object.keys(markers).map(key => (
             <Marker key={Math.random()} anchor={markers[key][0]}>
               <img alt="" style={{
                 filter: redFilter,
                 borderRadius: "50%",
-                animation: "pulseRed 2s infinite"
+                 animation: "pulseRed 2s infinite"
               }} src={dog} width={30} />
             </Marker>
-          ))}
+          ))} 
         </Map>
+
       </div>
     );
 
     // Detectados
     aPages.push(
-      <div>
-        <Map center={[41.415611, 2.182044]} zoom={14} width={400} height={600}>
+      <div style={{ textAlign: 'center', margin: '0 auto', maxWidth: window.innerWidth - 20 }}>
+
+        <Map center={this.state.center} zoom={this.state.zoom} defaultWidth={window.innerWidth - 20} height={window.innerHeight - 175}>
           {Object.keys(markers).map(key => (
             <Marker key={Math.random()} anchor={markers[key][0]}>
               <img alt="" style={{
                 filter: yellowFilter,
                 borderRadius: "50%",
-                animation: "pulseYellow 2s infinite"
+                 animation: "pulseYellow 2s infinite"
               }} src={dog} width={30} />
             </Marker>
-          ))}
+          ))} 
         </Map>
+
       </div>
     );
 
     // Encontrados
     aPages.push(
-      <div>
-        <Map center={[41.420611, 2.164044]} zoom={14} width={400} height={600}>
+      <div style={{ textAlign: 'center', margin: '0 auto', maxWidth: window.innerWidth - 20 }}>
+        <Map center={this.state.center} zoom={this.state.zoom} defaultWidth={window.innerWidth - 20} height={window.innerHeight - 175}>
           {Object.keys(markers).map(key => (
             <Marker key={Math.random()} anchor={markers[key][0]}>
               <img alt="" style={{
                 filter: greenFilter
               }} src={dog} width={30} />
             </Marker>
-          ))}
+          ))} 
         </Map>
       </div>
     );

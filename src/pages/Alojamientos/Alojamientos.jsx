@@ -7,14 +7,22 @@ import Map from 'pigeon-maps';
 import List from "../../components/List";
 import ListUsers from '../../assets/data/ListUsers';
 import Filterbar from '../../components/Filterbar';
+import house from "../../assets/images/icons/house.png";
 import fetch from "../../assets/images/icons/fetch.png";
+
+const locations = {
+  "Barcelona": { "center": [41.403611, 2.174444], "zoom": 12 }
+}
 
 class Alojamientos extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-    }
+    this.state = Object.assign({}, locations['Barcelona'], {
+      location: 'Barcelona',
+      animating: false,
+      animationStart: null
+    })
 
     this.handleNavBack = this.handleNavBack.bind(this);
   }
@@ -49,55 +57,43 @@ class Alojamientos extends React.Component {
     tabs.push(
       <div>
         <Filterbar filters={aFilters} />
-        <div>
-      <Map center={[41.403611, 2.174444]} zoom={14} width={400} height={200}>
-        {Object.keys(markers).map(key => (
-           <Marker key={Math.random()} anchor={markers[key][0]} onClick={this.handleMarkerClick}>
-           <img alt="" src={fetch} width={30} />
-         </Marker>
-        ))}
-      </Map>
-    </div>
-        {/* <Map
-          markerColor="blue"
-          showPopover={false}
-          showSearchBar={false}
-          height={"30vh"}
-          width={"100vh"}
-          zoom={14} /> */}
+        <div style={{ textAlign: 'center', margin: '0 auto', maxWidth: window.innerWidth - 20 }}>
+          <Map center={this.state.center} zoom={this.state.zoom} defaultWidth={window.innerWidth - 20} height={window.innerHeight/2 - 175}>
+            {Object.keys(markers).map(key => (
+              <Marker key={Math.random()} anchor={markers[key][0]} onClick={this.handleMarkerClick}>
+                <img alt="" src={house} width={30} />
+              </Marker>
+            ))}
+          </Map>
+        </div>
+
         <List
           items={ListUsers}
           showRating={true}
-          maxHeight={"25vh"}
+          maxHeight={"33vh"}
           overflow="auto"
         />
       </div>
     );
-    
+
     // Paseos
     tabs.push(
       <div>
         <Filterbar filters={aFilters} />
-        <div>
-      <Map center={[41.403611, 2.174444]} zoom={14} width={400} height={200}>
-        {Object.keys(markers).map(key => (
-           <Marker key={Math.random()} anchor={markers[key][0]} onClick={this.handleMarkerClick}>
-           <img alt="" src={fetch} width={30} />
-         </Marker>
-        ))}
-      </Map>
-    </div>
-        {/* <Map
-          markerColor="aqua"
-          showPopover={false}
-          showSearchBar={false}
-          height={"30vh"}
-          width={"100vh"}
-          zoom={14} /> */}
+        <div style={{ textAlign: 'center', margin: '0 auto', maxWidth: window.innerWidth - 20 }}>
+        <Map center={this.state.center} zoom={this.state.zoom} defaultWidth={window.innerWidth - 20} height={window.innerHeight/2 - 175}>
+            {Object.keys(markers).map(key => (
+              <Marker key={Math.random()} anchor={markers[key][0]} onClick={this.handleMarkerClick}>
+                <img alt="" src={fetch} width={30} />
+              </Marker>
+            ))}
+          </Map>
+        </div>
+
         <List
           items={ListUsers}
           showRating={true}
-          maxHeight={"25vh"}
+          maxHeight={"33vh"}
           overflow="auto"
         />
       </div>

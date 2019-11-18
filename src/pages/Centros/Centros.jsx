@@ -10,12 +10,19 @@ import Map from 'pigeon-maps';
 import adoptdog from "../../assets/images/icons/adoptdog.png";
 import vet from "../../assets/images/icons/vet.png";
 
+const locations = {
+  "Barcelona": { "center": [41.403611, 2.174444], "zoom": 12 }
+}
+
 class Centros extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-    }
+    this.state = Object.assign({}, locations['Barcelona'], {
+      location: 'Barcelona',
+      animating: false,
+      animationStart: null
+    })
 
     this.handleNavBack = this.handleNavBack.bind(this);
   }
@@ -44,8 +51,8 @@ class Centros extends React.Component {
     let tabs = [];
     tabs.push(
       <div>
-        <div>
-          <Map center={[41.403611, 2.174444]} zoom={14} width={400} height={300}>
+        <div style={{ textAlign: 'center', margin: '0 auto', maxWidth: window.innerWidth - 20 }}>
+          <Map center={this.state.center} zoom={this.state.zoom} defaultWidth={window.innerWidth - 20} height={window.innerHeight/2 - 75}>
             {Object.keys(markers).map(key => (
                <Marker key={Math.random()} anchor={markers[key][0]}>
                <img alt="" src={adoptdog} width={30} />
@@ -64,8 +71,8 @@ class Centros extends React.Component {
     );
     tabs.push(
       <div>
-        <div>
-          <Map center={[41.403611, 2.174444]} zoom={14} width={400} height={300}>
+        <div style={{ textAlign: 'center', margin: '0 auto', maxWidth: window.innerWidth - 20 }}>
+          <Map center={this.state.center} zoom={this.state.zoom} defaultWidth={window.innerWidth - 20} height={window.innerHeight/2 - 75}>
             {Object.keys(markers).map(key => (
               <Marker key={Math.random()} anchor={markers[key][0]}>
               <img alt="" src={vet} width={30} />
@@ -77,7 +84,7 @@ class Centros extends React.Component {
           items={ListVets}
           showOpHours={true}
           showRating={false}
-          maxHeight={"45vh"}
+          maxHeight={"40vh"}
           overflow="auto"
         />
       </div>

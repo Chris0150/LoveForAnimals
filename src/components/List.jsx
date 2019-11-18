@@ -9,10 +9,12 @@ import Divider from '@material-ui/core/Divider';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import Rating from '@material-ui/lab/Rating';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
-import redMarker from "../assets/images/icons/redMarker.png";
-import greenMarker from "../assets/images/icons/greenMarker.png";
-import orangeMarker from "../assets/images/icons/orangeMarker.png";
 import Typography from '@material-ui/core/Typography';
+import dog from "../assets/images/icons/dog.png";
+
+let redFilter = "grayscale(100%) brightness(35%) sepia(100%) hue-rotate(-50deg) saturate(1000%) contrast(0.8)";
+let yellowFilter = "grayscale(100%) brightness(90%) sepia(90%) hue-rotate(360deg) saturate(500%) contrast(1)";
+let greenFilter = "grayscale(100%) brightness(35%) sepia(100%) hue-rotate(50deg) saturate(2000%) contrast(0.8)";
 
 const useStyles = makeStyles(theme => ({
   item: {
@@ -82,9 +84,9 @@ export default function FolderList(props) {
               {props.showLostMarker === true ?
                 <ListItemIcon>
                   <div>
-                    <img src={redMarker} alt="" width={"25px"} />
-                    <img src={orangeMarker} alt="" width={"25px"} style={{ filter: "grayscale(" + (Math.round(Math.random() - 0.3)).toString() + ")" }} />
-                    <img src={greenMarker} alt="" width={"25px"} style={{ filter: "grayscale(" + (Math.round(Math.random())).toString() + ")" }} />
+                     <img src={dog} alt="" width={"25px"} style={{ filter: redFilter }}/>
+                     <img src={dog} alt="" width={"25px"} style={{ filter: yellowFilter + " grayscale(" + (Math.round(Math.random() - 0.3)).toString() + ")"  }} />
+                     <img src={dog} alt="" width={"25px"} style={{ filter: greenFilter + " grayscale(" + (Math.round(Math.random() - 0.3)).toString() + ")"  }} /> 
                   </div>
                 </ListItemIcon>
                 : null}

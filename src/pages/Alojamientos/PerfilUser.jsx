@@ -13,14 +13,21 @@ import Map from 'pigeon-maps';
 import Button from '@material-ui/core/Button';
 import deer from "../../assets/images/icons/deer.png";
 import adoptdog from "../../assets/images/icons/adoptdog.png";
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+
+const locations = {
+  "Barcelona": { "center": [41.403611, 2.174444], "zoom": 14 }
+}
 
 class PerfilUser extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-    }
+    this.state = Object.assign({}, locations['Barcelona'], {
+      location: 'Barcelona',
+      animating: false,
+      animationStart: null
+    })
 
     this.handleNavBack = this.handleNavBack.bind(this);
   }
@@ -86,11 +93,13 @@ class PerfilUser extends React.Component {
         <Typography variant="caption" style={{ display: "block", margin: 10 }} gutterBottom>
           Zona aproximada de residencia:
           </Typography>
-        <Map center={[41.403611, 2.174444]} zoom={14} width={360} height={200}>
-        <Marker key={Math.random()} anchor={[41.403611, 2.174444]}>
-           <img alt="" src={deer} width={30} />
-         </Marker>
-        </Map>
+        <div style={{ textAlign: 'center', margin: '0 auto', maxWidth: window.innerWidth - 20 }}>
+          <Map center={this.state.center} zoom={this.state.zoom}  defaultWidth={window.innerWidth - 20} height={window.innerHeight/2 - 175}>
+            <Marker key={Math.random()} anchor={[41.403611, 2.174444]}>
+              <img alt="" src={deer} width={30} />
+            </Marker>
+          </Map>
+        </div>
         <Button style={{
           // marginTop: "40%",
           textAlign: "center",

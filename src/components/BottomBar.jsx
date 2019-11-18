@@ -7,7 +7,6 @@ import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
 import Typography from '@material-ui/core/Typography';
 import Modal from '@material-ui/core/Modal';
-import redMarker from "../assets/images/icons/redMarker.png";
 import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
@@ -145,7 +144,6 @@ export default function FolderList(props) {
           }
 
           <Button className={classes.button} onClick={handleClose}>
-            <img src={redMarker} alt="" width="20px" />
             {props.type === "lost" ? "Añadir" : "Enviar"}
           </Button>
         </div>
