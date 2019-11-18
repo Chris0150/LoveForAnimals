@@ -4,11 +4,11 @@ import NavBar from '../../components/NavBar';
 import BottomBar from '../../components/BottomBar';
 import TabPanel from '../../components/TabPanel';
 import List from "../../components/List";
-import Map from 'pigeon-maps'
-import Marker from 'pigeon-marker/react'
+import Map from 'pigeon-maps';
 import { connect } from "react-redux";
 import MenuIcon from '@material-ui/icons/Menu';
 import tileDataDogs from '../../assets/data/GridListDataDogs';
+import dog from "../../assets/images/icons/dog.png";
 
 class Perdidos extends React.Component {
   // eslint-disable-next-line
@@ -25,23 +25,22 @@ class Perdidos extends React.Component {
     this.props.history.goBack();
   }
 
-  // NOTE:
-  // Add the class pigeon-drag-block to disable dragging on the overlay. 
-  // Add the class pigeon-click-block to disable map background clicks on the element.
-
   render() {
     let aLostAnimals = [];
+    let aPages = [];
     let markers = [];
-    const YellowMarker = ({ left, top, style, children }) => (
+    let redFilter = "grayscale(100%) brightness(40%) sepia(100%) hue-rotate(-50deg) saturate(600%) contrast(0.8)";
+    let yellowFilter = "grayscale(100%) brightness(115%) sepia(90%) hue-rotate(360deg) saturate(500%) contrast(1)";
+    let greenFilter = "grayscale(100%) brightness(40%) sepia(100%) hue-rotate(50deg) saturate(1000%) contrast(0.8)";
+
+    const Marker = ({ left, top, style, children }) => (
       <div style={{
         position: 'absolute',
         left: left - 15,
         top: top - 30,
         width: 30,
         height: 30,
-        borderBottomLeftRadius: '100%',
-        borderBottomRightRadius: '100%',
-        background: 'yellow',
+        background: 'transparent',
         ...(style || {})
       }}>{children}</div>
     )
@@ -54,41 +53,57 @@ class Perdidos extends React.Component {
       markers.push(user.coords)
     ))
 
-    let aPages = [];
+    // Listado
     aPages.push(
       <div>
         <List showLostMarker={true} items={aLostAnimals} maxHeight={"75vh"} overflow="auto" />
       </div>
     );
 
+    // Perdidos
     aPages.push(
       <div>
         <Map center={[41.403611, 2.174444]} zoom={14} width={400} height={600}>
           {Object.keys(markers).map(key => (
-            <YellowMarker anchor={markers[key][0]}>
-            {/* o */}
-          </YellowMarker>
-            // <Marker key={key} anchor={markers[key][0]} payload={key} onClick={this.handleMarkerClick} />
+            <Marker key={Math.random()} anchor={markers[key][0]}>
+              <img alt="" style={{
+                filter: redFilter,
+                borderRadius: "50%",
+                animation: "pulseRed 2s infinite"
+              }} src={dog} width={30} />
+            </Marker>
           ))}
         </Map>
       </div>
     );
 
+    // Detectados
     aPages.push(
       <div>
-        <Map center={[41.403611, 2.174444]} zoom={14} width={400} height={600}>
+        <Map center={[41.415611, 2.182044]} zoom={14} width={400} height={600}>
           {Object.keys(markers).map(key => (
-            <Marker key={key} anchor={markers[key][0]} payload={key} onClick={this.handleMarkerClick} />
+            <Marker key={Math.random()} anchor={markers[key][0]}>
+              <img alt="" style={{
+                filter: yellowFilter,
+                borderRadius: "50%",
+                animation: "pulseYellow 2s infinite"
+              }} src={dog} width={30} />
+            </Marker>
           ))}
         </Map>
       </div>
     );
 
+    // Encontrados
     aPages.push(
       <div>
-        <Map center={[41.403611, 2.174444]} zoom={14} width={400} height={600}>
+        <Map center={[41.420611, 2.164044]} zoom={14} width={400} height={600}>
           {Object.keys(markers).map(key => (
-            <Marker key={key} anchor={markers[key][0]} payload={key} onClick={this.handleMarkerClick} />
+            <Marker key={Math.random()} anchor={markers[key][0]}>
+              <img alt="" style={{
+                filter: greenFilter
+              }} src={dog} width={30} />
+            </Marker>
           ))}
         </Map>
       </div>

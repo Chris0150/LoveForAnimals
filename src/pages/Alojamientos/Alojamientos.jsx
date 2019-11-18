@@ -3,11 +3,11 @@ import { connect } from "react-redux";
 import './Alojamientos.css';
 import NavBar from '../../components/NavBar';
 import TabPanel from '../../components/TabPanel';
-import Map from 'pigeon-maps'
-import Marker from 'pigeon-marker/react'
+import Map from 'pigeon-maps';
 import List from "../../components/List";
 import ListUsers from '../../assets/data/ListUsers';
 import Filterbar from '../../components/Filterbar';
+import fetch from "../../assets/images/icons/fetch.png";
 
 class Alojamientos extends React.Component {
   constructor(props) {
@@ -25,6 +25,17 @@ class Alojamientos extends React.Component {
 
   render() {
     let markers = [];
+    const Marker = ({ left, top, style, children }) => (
+      <div style={{
+        position: 'absolute',
+        left: left - 15,
+        top: top - 30,
+        width: 30,
+        height: 30,
+        background: 'transparent',
+        ...(style || {})
+      }}>{children}</div>
+    )
     ListUsers.map(user => (markers.push(user.coords)));
 
     let aFilters = [];
@@ -41,7 +52,9 @@ class Alojamientos extends React.Component {
         <div>
       <Map center={[41.403611, 2.174444]} zoom={14} width={400} height={200}>
         {Object.keys(markers).map(key => (
-          <Marker key={key} anchor={markers[key][0]} payload={key} onClick={this.handleMarkerClick} />
+           <Marker key={Math.random()} anchor={markers[key][0]} onClick={this.handleMarkerClick}>
+           <img alt="" src={fetch} width={30} />
+         </Marker>
         ))}
       </Map>
     </div>
@@ -68,7 +81,9 @@ class Alojamientos extends React.Component {
         <div>
       <Map center={[41.403611, 2.174444]} zoom={14} width={400} height={200}>
         {Object.keys(markers).map(key => (
-          <Marker key={key} anchor={markers[key][0]} payload={key} onClick={this.handleMarkerClick} />
+           <Marker key={Math.random()} anchor={markers[key][0]} onClick={this.handleMarkerClick}>
+           <img alt="" src={fetch} width={30} />
+         </Marker>
         ))}
       </Map>
     </div>

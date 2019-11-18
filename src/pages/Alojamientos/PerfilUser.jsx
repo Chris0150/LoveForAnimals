@@ -9,10 +9,9 @@ import Typography from '@material-ui/core/Typography';
 import User from '../../assets/images/profiles/user.png';
 import ListUsers from '../../assets/data/ListUsers';
 import GridList from '../../components/GridList';
-import Map from 'pigeon-maps'
-import Marker from 'pigeon-marker/react'
+import Map from 'pigeon-maps';
 import Button from '@material-ui/core/Button';
-
+import deer from "../../assets/images/icons/deer.png";
 import adoptdog from "../../assets/images/icons/adoptdog.png";
 import { Link } from 'react-router-dom'
 
@@ -31,6 +30,17 @@ class PerfilUser extends React.Component {
   }
 
   render() {
+    const Marker = ({ left, top, style, children }) => (
+      <div style={{
+        position: 'absolute',
+        left: left - 15,
+        top: top - 30,
+        width: 30,
+        height: 30,
+        background: 'transparent',
+        ...(style || {})
+      }}>{children}</div>
+    )
 
     // Perfil
     let tabs = [];
@@ -77,7 +87,9 @@ class PerfilUser extends React.Component {
           Zona aproximada de residencia:
           </Typography>
         <Map center={[41.403611, 2.174444]} zoom={14} width={360} height={200}>
-          <Marker key={1} anchor={[41.403611, 2.174444]} payload={1} onClick={this.handleMarkerClick} />
+        <Marker key={Math.random()} anchor={[41.403611, 2.174444]}>
+           <img alt="" src={deer} width={30} />
+         </Marker>
         </Map>
         <Button style={{
           // marginTop: "40%",

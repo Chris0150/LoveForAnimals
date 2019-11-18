@@ -6,8 +6,9 @@ import TabPanel from '../../components/TabPanel';
 import List from "../../components/List";
 import ListCentros from '../../assets/data/ListCentros';
 import ListVets from '../../assets/data/ListVeterinarios';
-import Map from 'pigeon-maps'
-import Marker from 'pigeon-marker/react'
+import Map from 'pigeon-maps';
+import adoptdog from "../../assets/images/icons/adoptdog.png";
+import vet from "../../assets/images/icons/vet.png";
 
 class Centros extends React.Component {
   constructor(props) {
@@ -25,6 +26,18 @@ class Centros extends React.Component {
 
   render() {
     let markers = [];
+    const Marker = ({ left, top, style, children }) => (
+      <div style={{
+        position: 'absolute',
+        left: left - 15,
+        top: top - 30,
+        width: 30,
+        height: 30,
+        background: 'transparent',
+        ...(style || {})
+      }}>{children}</div>
+    )
+    
     ListCentros.map(centro => (markers.push(centro.coords)))
 
     // Tabs
@@ -34,7 +47,9 @@ class Centros extends React.Component {
         <div>
           <Map center={[41.403611, 2.174444]} zoom={14} width={400} height={300}>
             {Object.keys(markers).map(key => (
-              <Marker key={key} anchor={markers[key][0]} payload={key} onClick={this.handleMarkerClick} />
+               <Marker key={Math.random()} anchor={markers[key][0]}>
+               <img alt="" src={adoptdog} width={30} />
+             </Marker>
             ))}
           </Map>
         </div>
@@ -52,7 +67,9 @@ class Centros extends React.Component {
         <div>
           <Map center={[41.403611, 2.174444]} zoom={14} width={400} height={300}>
             {Object.keys(markers).map(key => (
-              <Marker key={key} anchor={markers[key][0]} payload={key} onClick={this.handleMarkerClick} />
+              <Marker key={Math.random()} anchor={markers[key][0]}>
+              <img alt="" src={vet} width={30} />
+            </Marker>
             ))}
           </Map>
         </div>

@@ -44,81 +44,81 @@ const tileData = [
         title: 'Kuna',
         location: 'Barcelona',
         type: "redMarker",
-        coords: [[41.403, 2.1744], 13]
+        coords: [[41.413, 2.1749], 13]
     }, {
         img: image3,
         title: 'Tera',
         location: 'Barcelona',
         type: "greenMarker",
-        coords: [[41.403, 2.1744], 13]
+        coords: [[41.425, 2.1755], 13]
     }, {
         img: image4,
         title: 'Sura',
         location: 'Barcelona',
         type: "redMarker",
-        coords: [[41.403, 2.1744], 13]
+        coords: [[41.435, 2.1769], 13]
     }, {
         img: image5,
         title: 'Mico',
         location: 'Barcelona',
         type: "orangeMarker",
-        coords: [[41.403, 2.1744], 13]
+        coords: [[41.456, 2.1778], 13]
     }, {
         img: image6,
         title: 'Teca',
         location: 'Barcelona',
         type: "redMarker",
-        coords: [[41.403, 2.1744], 13]
+        coords: [[41.487, 2.1789], 13]
     }, {
         img: image7,
         title: 'Pilo',
         location: 'Barcelona',
         type: "greenMarker",
-        coords: [[41.403, 2.1744], 13]
+        coords: [[41.499, 2.1795], 13]
     }, {
         img: image8,
         title: 'Mota',
         location: 'Barcelona',
         type: "greenMarker",
-        coords: [[41.403, 2.1744], 13]
+        coords: [[41.603, 2.1805], 13]
     }, {
         img: image9,
         title: 'Puca',
         location: 'Barcelona',
         cols: 2,
         type: "redMarker",
-        coords: [[41.403, 2.1744], 13]
+        coords: [[41.403, 2.1758], 13]
     }, {
         img: image10,
         title: 'Sena',
         location: 'Barcelona',
         type: "redMarker",
-        coords: [[41.403, 2.1744], 13]
+        coords: [[41.413, 2.1767], 13]
     }, {
         img: image11,
         title: 'Fido',
         location: 'Barcelona',
         type: "orangeMarker",
-        coords: [[41.403, 2.1744], 13]
+        coords: [[41.420, 2.1749], 13]
     }, {
         img: image12,
         title: 'Lupa',
         location: 'Barcelona',
         type: "redMarker",
-        coords: [[41.403, 2.1744], 13]
+        coords: [[41.401, 2.1748], 13]
     }, {
         img: image13,
         title: 'Cola',
         location: 'Barcelona',
         type: "greenMarker",
-        coords: [[41.403, 2.1744], 13]
+        coords: [[41.398, 2.1750], 13]
     }, {
         img: image14,
         title: 'Gula',
         location: 'Barcelona',
         cols: 2,
         type: "redMarker",
-        coords: [[41.403, 2.1744], 13]
+        coords: [[41.420, 2.1760], 13]
     }, {
         img: image15,
         title: 'Zola',
