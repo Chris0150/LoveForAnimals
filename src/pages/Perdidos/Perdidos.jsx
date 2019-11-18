@@ -32,6 +32,19 @@ class Perdidos extends React.Component {
   render() {
     let aLostAnimals = [];
     let markers = [];
+    const YellowMarker = ({ left, top, style, children }) => (
+      <div style={{
+        position: 'absolute',
+        left: left - 15,
+        top: top - 30,
+        width: 30,
+        height: 30,
+        borderBottomLeftRadius: '100%',
+        borderBottomRightRadius: '100%',
+        background: 'yellow',
+        ...(style || {})
+      }}>{children}</div>
+    )
 
     tileDataDogs.map((item) => (
       aLostAnimals.push({ target: "", title: item.title, subtitle: item.location, icon: item.img, type: item.type }))
@@ -52,7 +65,10 @@ class Perdidos extends React.Component {
       <div>
         <Map center={[41.403611, 2.174444]} zoom={14} width={400} height={600}>
           {Object.keys(markers).map(key => (
-            <Marker key={key} anchor={markers[key][0]} payload={key} onClick={this.handleMarkerClick} />
+            <YellowMarker anchor={markers[key][0]}>
+            {/* o */}
+          </YellowMarker>
+            // <Marker key={key} anchor={markers[key][0]} payload={key} onClick={this.handleMarkerClick} />
           ))}
         </Map>
       </div>
