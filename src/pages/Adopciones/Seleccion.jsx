@@ -3,9 +3,9 @@ import { connect } from "react-redux";
 import './Seleccion.css';
 import NavBar from '../../components/NavBar';
 import Carousel from '../../components/Carousel';
-import dog from '../../assets/images/profiles/bannerdog1.png';
+import dog from '../../assets/images/profiles/bannerdog1.jpg';
 import cat from '../../assets/images/profiles/bannercat3.jpg';
-import other from '../../assets/images/profiles/bannerother.png';
+import other from '../../assets/images/profiles/bannerother.jpg';
 
 class Seleccion extends React.Component {
   constructor(props) {
