@@ -11,7 +11,7 @@ import adoptdog from "../../assets/images/icons/adoptdog.png";
 import vet from "../../assets/images/icons/vet.png";
 
 const locations = {
-  "Barcelona": { "center": [41.403611, 2.174444], "zoom": 12 }
+  "Barcelona": { "center": [41.403611, 2.174444], "zoom": 14 }
 }
 
 class Centros extends React.Component {
