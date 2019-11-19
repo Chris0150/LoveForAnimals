@@ -12,7 +12,7 @@ import ListUsers from '../../assets/data/ListUsers';
 import vet from "../../assets/images/icons/vet.png";
 
 const locations = {
-  "Barcelona": { "center": [41.403611, 2.174444], "zoom": 12 }
+  "Barcelona": { "center": [41.403611, 2.174444], "zoom": 14 }
 }
 
 class PerfilVet extends React.Component {
@@ -88,7 +88,7 @@ class PerfilVet extends React.Component {
       <div>
         <Map center={this.state.center} zoom={this.state.zoom} defaultWidth={400} height={400}>
 
-          <Marker key={Math.random()} anchor={[41.423611, 2.179444]} onClick={this.handleMarkerClick}>
+          <Marker key={Math.random()} anchor={[41.403611, 2.174444]} onClick={this.handleMarkerClick}>
             <img alt="" src={vet} width={30} />
           </Marker>
 

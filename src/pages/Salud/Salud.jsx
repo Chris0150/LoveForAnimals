@@ -122,7 +122,7 @@ class Salud extends React.Component {
     return (
       <div>
         <NavBar handleNavBack={this.handleNavBack} title="Salud y Consejos" />
-        <Typography variant="subtitle1" style={{ display: "block", fontWeight: "bold", margin: 10 }} gutterBottom>
+        <Typography variant="subtitle1" style={{ display: "block", fontWeight: "", margin: 10 }} gutterBottom>
           Selecciona una categoría:
         </Typography>
         <VerticalTabPanel icons={aIcons} items={aCards} change={this.onClick} />

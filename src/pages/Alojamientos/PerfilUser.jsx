@@ -16,7 +16,7 @@ import adoptdog from "../../assets/images/icons/adoptdog.png";
 import { Link } from 'react-router-dom';
 
 const locations = {
-  "Barcelona": { "center": [41.403611, 2.174444], "zoom": 14 }
+  "Barcelona": { "center": [41.424434259891, 2.1786711614074648], "zoom": 15 }
 }
 
 class PerfilUser extends React.Component {
@@ -26,7 +26,8 @@ class PerfilUser extends React.Component {
     this.state = Object.assign({}, locations['Barcelona'], {
       location: 'Barcelona',
       animating: false,
-      animationStart: null
+      animationStart: null,
+      center: [41.403611, 2.174444]
     })
 
     this.handleNavBack = this.handleNavBack.bind(this);
