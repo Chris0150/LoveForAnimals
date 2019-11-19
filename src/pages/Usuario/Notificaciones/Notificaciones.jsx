@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from "react-redux";
 import './Notificaciones.css';
 import NavBar from '../../../components/NavBar';
+import Typography from '@material-ui/core/Typography';
 
 class Notificaciones extends React.Component {
   constructor(props) {
@@ -20,7 +21,9 @@ class Notificaciones extends React.Component {
     return (
       <div>
         <NavBar handleNavBack={this.handleNavBack} title="Notificaciones"/>
-        <p>Notificaciones page</p>
+        <Typography variant="h6" display="block" gutterBottom>
+          Notificaciones
+        </Typography>
       </div>
     );
   }

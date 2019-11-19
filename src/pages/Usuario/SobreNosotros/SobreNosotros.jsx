@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from "react-redux";
 import './SobreNosotros.css';
 import NavBar from '../../../components/NavBar';
+import Typography from '@material-ui/core/Typography';
 
 class SobreNosotros extends React.Component {
   constructor(props) {
@@ -21,8 +22,10 @@ class SobreNosotros extends React.Component {
   render() {
     return (
       <div>
-        <NavBar handleNavBack={this.handleNavBack} title="SobreNosotros"/>
-        <p>Sobre Nosotros</p>
+        <NavBar handleNavBack={this.handleNavBack} title="Sobre Nosotros"/>
+        <Typography variant="h6" display="block" gutterBottom>
+          Sobre Nosotros
+        </Typography>
       </div>
     );
   }

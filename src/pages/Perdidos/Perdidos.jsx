@@ -11,7 +11,7 @@ import tileDataDogs from '../../assets/data/GridListDataDogs';
 import dog from "../../assets/images/icons/dog.png";
 
 const locations = {
-  "Barcelona": { "center": [41.403611, 2.174444], "zoom": 12 }
+  "Barcelona": { "center": [41.403611, 2.174444], "zoom": 14 }
 }
 
 class Perdidos extends React.Component {
