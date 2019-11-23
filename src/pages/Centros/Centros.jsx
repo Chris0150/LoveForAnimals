@@ -1,28 +1,18 @@
 import React from 'react';
 import { connect } from "react-redux";
 import './Centros.css';
+import Map from '../../components/Map';
 import NavBar from '../../components/NavBar';
 import TabPanel from '../../components/TabPanel';
 import List from "../../components/List";
 import ListCentros from '../../assets/data/ListCentros';
 import ListVets from '../../assets/data/ListVeterinarios';
-import Map from 'pigeon-maps';
 import adoptdog from "../../assets/images/icons/adoptdog.png";
 import vet from "../../assets/images/icons/vet.png";
-
-const locations = {
-  "Barcelona": { "center": [41.403611, 2.174444], "zoom": 14 }
-}
 
 class Centros extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state = Object.assign({}, locations['Barcelona'], {
-      location: 'Barcelona',
-      animating: false,
-      animationStart: null
-    })
 
     this.handleNavBack = this.handleNavBack.bind(this);
   }
@@ -32,33 +22,25 @@ class Centros extends React.Component {
   }
 
   render() {
-    let markers = [];
-    const Marker = ({ left, top, style, children }) => (
-      <div style={{
-        position: 'absolute',
-        left: left - 15,
-        top: top - 30,
-        width: 30,
-        height: 30,
-        background: 'transparent',
-        ...(style || {})
-      }}>{children}</div>
-    )
-    
-    ListCentros.map(centro => (markers.push(centro.coords)))
+    let aMarkers = [];
 
-    // Tabs
+    // Data mapping
+    ListCentros.map(centro => (aMarkers.push(centro.coords)))
+
+    // Tab: Centros
     let tabs = [];
     tabs.push(
       <div>
         <div style={{ textAlign: 'center', margin: '0 auto', maxWidth: window.innerWidth - 20 }}>
-          <Map center={this.state.center} zoom={this.state.zoom} defaultWidth={window.innerWidth - 20} height={window.innerHeight/2 - 75}>
-            {Object.keys(markers).map(key => (
-               <Marker key={Math.random()} anchor={markers[key][0]}>
-               <img alt="" src={adoptdog} width={30} />
-             </Marker>
-            ))}
-          </Map>
+          <Map
+            type={"Alojamientos"}
+            showPopover={true}
+            markers={aMarkers}
+            icon={adoptdog}
+            zoom={14}
+            height={"40vh"}
+            width={"30vh"}
+          />
         </div>
         <List
           items={ListCentros}
@@ -69,16 +51,20 @@ class Centros extends React.Component {
         />
       </div>
     );
+
+    // Tab: Veterinarios
     tabs.push(
       <div>
         <div style={{ textAlign: 'center', margin: '0 auto', maxWidth: window.innerWidth - 20 }}>
-          <Map center={this.state.center} zoom={this.state.zoom} defaultWidth={window.innerWidth - 20} height={window.innerHeight/2 - 75}>
-            {Object.keys(markers).map(key => (
-              <Marker key={Math.random()} anchor={markers[key][0]}>
-              <img alt="" src={vet} width={30} />
-            </Marker>
-            ))}
-          </Map>
+          <Map
+            type={"Alojamientos"}
+            showPopover={true}
+            markers={aMarkers}
+            icon={vet}
+            zoom={14}
+            height={"40vh"}
+            width={"30vh"}
+          />
         </div>
         <List
           items={ListVets}

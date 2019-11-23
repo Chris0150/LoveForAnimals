@@ -1,29 +1,19 @@
 import React from 'react';
 import { connect } from "react-redux";
-import './Centros.css';
+import './PerfilVet.css';
+import Map from '../../components/Map';
 import NavBar from '../../components/NavBar';
 import TabPanel from '../../components/TabPanel';
 import List from "../../components/List";
-import Map from 'pigeon-maps';
 import GridList from '../../components/GridList';
 import Typography from '@material-ui/core/Typography';
 import User from '../../assets/images/vets/wide2.jpg';
 import ListUsers from '../../assets/data/ListUsers';
 import vet from "../../assets/images/icons/vet.png";
 
-const locations = {
-  "Barcelona": { "center": [41.403611, 2.174444], "zoom": 14 }
-}
-
 class PerfilVet extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state = Object.assign({}, locations['Barcelona'], {
-      location: 'Barcelona',
-      animating: false,
-      animationStart: null
-    })
 
     this.handleNavBack = this.handleNavBack.bind(this);
   }
@@ -33,18 +23,8 @@ class PerfilVet extends React.Component {
   }
 
   render() {
-
-    const Marker = ({ left, top, style, children }) => (
-      <div style={{
-        position: 'absolute',
-        left: left - 15,
-        top: top - 30,
-        width: 30,
-        height: 30,
-        background: 'transparent',
-        ...(style || {})
-      }}>{children}</div>
-    )
+    let aMarkers = [];
+    aMarkers.push([[41.403611, 2.174444], 13]);
 
     // Tabs
     let tabs = [];
@@ -85,15 +65,17 @@ class PerfilVet extends React.Component {
 
     // Contacto
     tabs.push(
-      <div>
-        <Map center={this.state.center} zoom={this.state.zoom} defaultWidth={400} height={400}>
-
-          <Marker key={Math.random()} anchor={[41.403611, 2.174444]} onClick={this.handleMarkerClick}>
-            <img alt="" src={vet} width={30} />
-          </Marker>
-
-        </Map>
-      </div>
+      <div style={{ textAlign: 'center', margin: '0 auto', maxWidth: window.innerWidth - 20 }}>
+          <Map
+            type={"Contacto"}
+            showPopover={true}
+            markers={aMarkers}
+            icon={vet}
+            zoom={14}
+            height={"50vh"}
+            width={"30vh"}
+          />
+        </div>
     );
 
     return (

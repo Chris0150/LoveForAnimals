@@ -9,26 +9,15 @@ import Typography from '@material-ui/core/Typography';
 import User from '../../assets/images/profiles/user.png';
 import ListUsers from '../../assets/data/ListUsers';
 import GridList from '../../components/GridList';
-import Map from 'pigeon-maps';
+import Map from '../../components/Map';
 import Button from '@material-ui/core/Button';
 import deer from "../../assets/images/icons/deer.png";
 import adoptdog from "../../assets/images/icons/adoptdog.png";
 import { Link } from 'react-router-dom';
 
-const locations = {
-  "Barcelona": { "center": [41.424434259891, 2.1786711614074648], "zoom": 15 }
-}
-
 class PerfilUser extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state = Object.assign({}, locations['Barcelona'], {
-      location: 'Barcelona',
-      animating: false,
-      animationStart: null,
-      center: [41.403611, 2.174444]
-    })
 
     this.handleNavBack = this.handleNavBack.bind(this);
   }
@@ -38,17 +27,8 @@ class PerfilUser extends React.Component {
   }
 
   render() {
-    const Marker = ({ left, top, style, children }) => (
-      <div style={{
-        position: 'absolute',
-        left: left - 15,
-        top: top - 30,
-        width: 30,
-        height: 30,
-        background: 'transparent',
-        ...(style || {})
-      }}>{children}</div>
-    )
+    let aMarkers = [];
+    aMarkers.push([[41.403611, 2.174444], 13]);
 
     // Perfil
     let tabs = [];
@@ -95,11 +75,15 @@ class PerfilUser extends React.Component {
           Zona aproximada de residencia:
           </Typography>
         <div style={{ textAlign: 'center', margin: '0 auto', maxWidth: window.innerWidth - 20 }}>
-          <Map center={this.state.center} zoom={this.state.zoom}  defaultWidth={window.innerWidth - 20} height={window.innerHeight/2 - 175}>
-            <Marker key={Math.random()} anchor={[41.403611, 2.174444]}>
-              <img alt="" src={deer} width={30} />
-            </Marker>
-          </Map>
+          <Map
+            type={"Alojamientos"}
+            showPopover={true}
+            markers={aMarkers}
+            icon={deer}
+            zoom={14}
+            height={"25vh"}
+            width={"30vh"}
+          />
         </div>
         <Button style={{
           // marginTop: "40%",
