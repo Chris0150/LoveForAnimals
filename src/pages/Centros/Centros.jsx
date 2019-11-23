@@ -33,13 +33,12 @@ class Centros extends React.Component {
       <div>
         <div style={{ textAlign: 'center', margin: '0 auto', maxWidth: window.innerWidth - 20 }}>
           <Map
-            type={"Alojamientos"}
+            type={"Centros"}
             showPopover={true}
             markers={aMarkers}
             icon={adoptdog}
             zoom={14}
-            height={"40vh"}
-            width={"30vh"}
+            height={window.innerHeight/3}
           />
         </div>
         <List
@@ -57,13 +56,12 @@ class Centros extends React.Component {
       <div>
         <div style={{ textAlign: 'center', margin: '0 auto', maxWidth: window.innerWidth - 20 }}>
           <Map
-            type={"Alojamientos"}
+            type={"Veterinarios"}
             showPopover={true}
             markers={aMarkers}
             icon={vet}
             zoom={14}
-            height={"40vh"}
-            width={"30vh"}
+            height={window.innerHeight/3}
           />
         </div>
         <List

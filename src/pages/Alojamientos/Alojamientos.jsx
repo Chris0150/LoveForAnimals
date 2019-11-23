@@ -44,8 +44,7 @@ class Alojamientos extends React.Component {
             markers={aMarkers}
             icon={house}
             zoom={14}
-            height={"33vh"}
-            width={"30vh"}
+            height={window.innerHeight/3}
           />
         </div>
         <List
@@ -63,13 +62,12 @@ class Alojamientos extends React.Component {
         <Filterbar filters={aFilters} />
         <div style={{ textAlign: 'center', margin: '0 auto', maxWidth: window.innerWidth - 20 }}>
           <Map
-            type={"Alojamientos"}
+            type={"Paseos"}
             showPopover={true}
             markers={aMarkers}
             icon={fetch}
             zoom={14}
-            height={"33vh"}
-            width={"30vh"}
+            height={window.innerHeight/3}
           />
         </div>
         <List

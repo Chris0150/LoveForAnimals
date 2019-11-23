@@ -81,8 +81,7 @@ class PerfilUser extends React.Component {
             markers={aMarkers}
             icon={deer}
             zoom={14}
-            height={"25vh"}
-            width={"30vh"}
+            height={window.innerHeight/4}
           />
         </div>
         <Button style={{

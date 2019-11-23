@@ -12,6 +12,9 @@ import Popover from '@material-ui/core/Popover';
 import dogLost from '../assets/images/dogs/1.jpg';
 import catDetected from '../assets/images/cats/catDetected.jpeg';
 import catFound from '../assets/images/cats/1.jpg';
+import houseBanner from "../assets/images/centros/wide1.jpg";
+import vetBanner from '../assets/images/vets/wide2.jpg';
+import userPic from '../assets/images/profiles/user3.png';
 
 const useStyles = makeStyles(theme => ({
     card: {
@@ -72,15 +75,20 @@ export default function SimpleSelect(props) {
         name = "Ceres";
         text = "Encontrada el día 18/12/19 por User23.";
     }
-    else if (props.type === "Alojamientos") {
-        thumbnail = catFound;
-        name = "Ceres";
-        text = "Encontrada el día 18/12/19 por User23.";
+    else if (props.type === "Alojamientos" || props.type === "Paseos") {
+        thumbnail = userPic;
+        name = "User24";
+        text = "Disponible";
     }
-    else if (props.type === "Paseos") {
-        thumbnail = catFound;
-        name = "Ceres";
-        text = "Encontrada el día 18/12/19 por User23.";
+    else if (props.type === "Centros") {
+        thumbnail = houseBanner;
+        name = "Protectora Gat i Gos";
+        text = "Contactar";
+    }
+    else if (props.type === "Veterinarios") {
+        thumbnail = vetBanner;
+        name = "Medico Veterinario 24/7";
+        text = "Contactar";
     }
 
     // Thumbnail filters
@@ -112,14 +120,11 @@ export default function SimpleSelect(props) {
         setAnchorEl(null);
     };
 
-    const handleShow = (event) => {
-        debugger;
-        if (event.target && event.target.src && event.target.src.length > 0) {
-            setAnchorEl(event.currentTarget.parentElement);
-            event.preventDefault();
-            event.stopPropagation();
-        } else {
+    const handleShow = (oEvent) => {
+        var event = oEvent.event;
 
+        if (event.target && event.target.src && event.target.src.length > 0) {
+            setAnchorEl(event.currentTarget);
         }
     };
 
@@ -141,10 +146,8 @@ export default function SimpleSelect(props) {
                             vertical: 'top',
                             horizontal: 'left',
                         }}
-                        transformOrigin={{
-                            vertical: 'bottom',
-                            horizontal: 'left',
-                        }}
+                        anchorReference="anchorPosition"
+                        anchorPosition={{ top: window.innerHeight/3, left: window.innerWidth/4 }}
                     >
                         <Card className={classes.card}>
                             <CardActionArea>
@@ -176,16 +179,17 @@ export default function SimpleSelect(props) {
                 <Map
                     center={[defaultProps.center.lat, defaultProps.center.lng]}
                     zoom={props.zoom}
-                    defaultWidth={props.width}
+                    defaultWidth={window.innerWidth - 20 }
+                    onClick={handleShow}
                     height={props.height}>
 
                     {Object.keys(props.markers).map(key => (
-                        <Marker key={Math.random()} anchor={props.markers[key][0]} onClick={handleShow}>
+                        <Marker key={Math.random()} anchor={props.markers[key][0]}>
                             <img alt="" style={{
                                 filter: filter,
                                 borderRadius: props.borderRadius,
                                 animation: props.animation
-                            }} src={props.icon} width={30} />
+                            }} src={props.icon} width={35} />
                         </Marker>
                     ))}
                 </Map>

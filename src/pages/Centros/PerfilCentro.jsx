@@ -72,8 +72,7 @@ class PerfilCentro extends React.Component {
             markers={aMarkers}
             icon={adoptdog}
             zoom={14}
-            height={"50vh"}
-            width={"30vh"}
+            height={window.innerHeight/2}
           />
         </div>
     );

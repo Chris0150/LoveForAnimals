@@ -54,8 +54,7 @@ class Perdidos extends React.Component {
           markers={aMarkers}
           icon={dog}
           zoom={15}
-          height={"75vh"}
-          width={"30vh"}
+          height={window.innerHeight - 175}
         />
       </div>
     );
@@ -72,8 +71,7 @@ class Perdidos extends React.Component {
           markers={aMarkers}
           icon={dog}
           zoom={14}
-          height={"75vh"}
-          width={"30vh"}
+          height={window.innerHeight - 175}
         />
       </div>
     );
@@ -88,8 +86,7 @@ class Perdidos extends React.Component {
           markers={aMarkers}
           icon={dog}
           zoom={13}
-          height={"75vh"}
-          width={"30vh"}
+          height={window.innerHeight - 175}
         />
       </div>
     );
