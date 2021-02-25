@@ -1,7 +1,7 @@
 # LoveForAnimals
 > Platform designed to accelerate the adoption of animals (dogs, cats, bunnies, etc.) at a national level, find lost animals in your city, learn with tutorials how to take care of them, volunteer as a helper for others, and many other functionalities to help our smaller friends.
 
-(https://pasteboard.co/JPYjx07.png)
+https://pasteboard.co/JPYjx07.png
 
 
 ## Screens
