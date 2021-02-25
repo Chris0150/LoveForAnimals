@@ -1,4 +1,7 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# LoveForAnimals
+> Platform designed to accelerate the adoption of animals (dogs, cats, bunnies, etc.) at a national level, find lost animals in your city, learn with tutorials how to take care of them, volunteer as a helper for others, and many other functionalities to help our smaller friends.
+
+![screens](https://pasteboard.co/JPYjx07.png)
 
 ## Available Scripts
 
